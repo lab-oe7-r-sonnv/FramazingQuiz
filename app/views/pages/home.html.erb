@@ -1,0 +1,36 @@
+<div class="center jumbotron">
+  <div class="introdue">
+    <h1>Framazing Quiz</h1>
+
+    <h2>
+      <%= t ".intro1" %>
+    </h2>
+    <div class="paragraph">
+      <p><%= t ".intro2" %></p>
+    </div>
+    <%= link_to t(".getstarted"), "#", class: "btn btn-lg btn-signup" %>
+  </div>
+  <hr/>
+  <div class="rawcontent">
+    <h1><%= @lessons.count %> <%= t ".countset" %></h1>
+    <div class= "lessons-list">
+      <div class = "container">
+        <% @list_lessons.each do |item| %>
+          <%= link_to root_path do %>
+            <div class="lessons-item">
+              <div class= "lessons-image">
+              </div>
+              <div class= "lessons-author">
+                <%= link_to item.topic.creator.name , "#" %>
+              </div>
+              <div class= "lessons-name">
+                <h3><%= item.name %></h3>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <%= link_to t(".getstarted"), "#", class: "btn btn-lg btn-signup" %>
+  </div>
+</div>

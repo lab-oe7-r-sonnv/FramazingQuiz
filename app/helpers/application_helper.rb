@@ -1,4 +1,9 @@
 module ApplicationHelper
+  def full_title page_title = ""
+    base_title = t ".fulltitle"
+    page_title.empty? ? base_title : page_title + " | " + base_title
+  end
+
   def link_to_add_term builder, lesson_word
     id = lesson_word.object_id
     lesson_word.build_word.definitions.build
