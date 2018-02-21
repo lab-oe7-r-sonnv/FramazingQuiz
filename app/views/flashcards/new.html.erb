@@ -1,0 +1,8 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+
+<div id="learn_flashcards">
+  <%= render "flashcards", learnt_words: @learnt_words, msg: @msg,
+    size_of_words: @size_of_words, not_learnt_words: @not_learnt_words,
+    current_word: @current_word %>
+</div>

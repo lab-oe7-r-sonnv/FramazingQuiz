@@ -36,6 +36,15 @@ en:
       term: "Term"
       def: "Definition"
       add_term: "Add"
+  flashcards:
+    new:
+      title: Flashcard
+    update:
+      finish_msg: Well done! You've learnt all words!
+    flashcards:
+      show_def: Show definition
+      next: Next
+      prev: Previous
   layouts:
     footer:
       en: English

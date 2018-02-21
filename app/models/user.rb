@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :lessons, through: :topics
 
   enum sex: %i(male female)
-  enum type: %i(student teacher)
+  enum type: {Student: "Student", Teacher: "Teacher"}
 end
