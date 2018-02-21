@@ -8,7 +8,7 @@
     <div class="paragraph">
       <p><%= t ".intro2" %></p>
     </div>
-    <%= link_to t(".getstarted"), "#", class: "btn btn-lg btn-signup" %>
+    <%= link_to t(".get_started"), "#", class: "btn btn-lg btn-signup" %>
   </div>
   <hr/>
   <div class="rawcontent">
@@ -19,8 +19,10 @@
           <%= link_to root_path do %>
             <div class="lessons-item">
               <div class= "lessons-image">
+                <%= image_tag "default.jpg" %>
               </div>
               <div class= "lessons-author">
+                <%= image_tag "default-avatar.png" %>
                 <%= link_to item.topic.creator.name , "#" %>
               </div>
               <div class= "lessons-name">
@@ -31,6 +33,6 @@
         <% end %>
       </div>
     </div>
-  <%= link_to t(".getstarted"), "#", class: "btn btn-lg btn-signup" %>
+  <%= link_to t(".get_started"), "#", class: "btn btn-lg btn-signup" %>
   </div>
 </div>

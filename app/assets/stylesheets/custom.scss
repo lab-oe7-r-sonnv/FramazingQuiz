@@ -1,0 +1,500 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+$white: #fff;
+$layoutcol: #03f;
+$lightblue: #39f;
+$black: #000;
+$yellow: #f90;
+$gray: #999;
+$darkblue: #006;
+$lightyellow: #fc0;
+$sdarkgray: rgba(0, 0, 0, .1);
+
+// responsive variable
+
+$res-320: 'only screen and (min-width: 320px) and (max-width: 374px)';
+$res-375: 'only screen and (min-width: 375px) and (max-width: 424px)';
+$res-425: 'only screen and (min-width: 425px) and (max-width: 767px)';
+$res-768: 'only screen and (min-width: 768px) and (max-width: 991px)';
+$res-992: 'only screen and (min-width: 992px) and (max-width: 1023px)';
+$res-1024: 'only screen and (min-width: 1024px) and (max-width: 1999px)';
+$res-1200: 'only screen and (min-width: 1200px)';
+
+@mixin responsive-320() {
+  @media #{$res-320} {
+    @content;
+  }
+}
+
+@mixin responsive-375() {
+  @media #{$res-375} {
+    @content;
+  }
+}
+
+@mixin responsive-425() {
+  @media #{$res-425} {
+    @content;
+  }
+}
+
+@mixin responsive-768() {
+  @media #{$res-768} {
+    @content;
+  }
+}
+
+@mixin responsive-992() {
+  @media #{$res-992} {
+    @content;
+  }
+}
+
+@mixin responsive-1024() {
+  @media #{$res-1024} {
+    @content;
+  }
+}
+
+@mixin responsive-1200() {
+  @media #{$res-1200} {
+    @content;
+  }
+}
+
+// end responsive variable
+
+// nav-bar
+
+.navbar-collapse {
+  background-color: $layoutcol;
+}
+
+.navbar-default {
+  background-color: $layoutcol;
+  height: 80px;
+}
+
+// scss-lint:disable ImportantRule
+.navbar-nav {
+
+  line-height: 50px;
+  margin-top: 16px;
+
+  li {
+
+    a {
+      color: $white !important;
+      font-size: 20px;
+      height: 50px;
+      margin-left: 5px;
+      padding-top: 10;
+    }
+
+    &:hover,
+    &:focus {
+      background: $lightblue;
+      opacity: .8;
+      transition: opacity .5s ease-out;
+    }
+  }
+}
+
+// scss-lint:enable ImportantRule
+
+// end nav bar
+
+// header
+
+.logo {
+  color: $white;
+  float: left;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+// end header
+
+// body
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.content-staticpage {
+  background: image-url('img_background.png');
+  margin-top: 35px;
+  min-height: calc(100% - 150px);
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  background: none;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.introdue {
+  margin-top: 100px;
+  padding-bottom: 100px;
+
+  h1 {
+    font-size: 9em;
+    line-height: 2em;
+    text-shadow: -3px 0 4px $darkblue;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+}
+
+.paragraph {
+  margin: 0 auto;
+  width: 30%;
+
+  p {
+    font-size: 1.2em;
+  }
+}
+
+.rawcontent {
+  margin-top: 100px;
+
+  h1 {
+    margin: 0 auto;
+    width: 55%;
+  }
+}
+
+.lessons-list {
+
+  margin: 50px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.lessons-item {
+  box-shadow: 4px 4px 8px 4px $gray;
+  box-sizing: border-box;
+  margin: 20px;
+  min-height: 300px;
+  transition: All .3s ease-in-out;
+  width: 30%;
+
+  img {
+    height: 250px;
+    width: 100%;
+  }
+
+  &:hover {
+    border: 2px solid $lightblue;
+    box-shadow: 0 0 20px 20px $sdarkgray;
+    transform: scale(1.1);
+    z-index: 2;
+  }
+}
+
+.lessons-author {
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 10px;
+  margin-top: 20px;
+  padding-left: 10%;
+  text-align: left;
+  text-shadow: 1px 0 2px $darkblue;
+
+  a {
+    color: $black;
+    list-style-type: none;
+    padding: 3px;
+    text-decoration: none;
+
+  }
+
+  img {
+    border-radius: 10%;
+    height: 10%;
+    width: 10%;
+  }
+}
+
+.lessons-name {
+  padding-bottom: 20px;
+  padding-left: 11%;
+  text-align: left;
+  width: 400px;
+  word-wrap: break-word;
+
+  h3 {
+    font-weight: 700;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 5px dotted $black;
+  display: block;
+  height: 2px;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.btn-signup {
+  background-color: $lightblue;
+  color: $white;
+  padding: 18px;
+
+  &:hover {
+    background-color: $yellow;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  color: $gray-light;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+// end body
+
+// footer
+
+footer {
+  background-color: $layoutcol;
+  height: 150px;
+  margin-top: 45px;
+  padding-top: 40px;
+
+// scss-lint:disable ImportantRule
+
+  a {
+    color: $white;
+    font-size: 20px;
+    text-decoration: none !important;
+
+// scss-lint:enable ImportantRule
+
+    &:hover {
+      color: $lightblue;
+    }
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+
+  p {
+    color: $white;
+    margin-left: 10%;
+  }
+}
+
+// responsive
+
+@include responsive-320 {
+  .lessons-item {
+    width: 100%;
+  }
+
+  .introdue {
+
+    h1 {
+      font-size: 4em;
+    }
+
+    p {
+      font-size: .6em;
+    }
+  }
+
+  .lessons-name {
+    width: 200px;
+
+    h3 {
+      font-size: 1.4em;
+    }
+  }
+}
+
+@include responsive-375 {
+  .lessons-item {
+    width: 100%;
+  }
+
+  .introdue {
+
+    h1 {
+      font-size: 5em;
+    }
+
+    p {
+      font-size: .7em;
+    }
+  }
+
+  .lessons-name {
+    width: 200px;
+
+    h3 {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@include responsive-425 {
+  .lessons-item {
+    width: 80%;
+  }
+
+  .introdue {
+
+    h1 {
+      font-size: 6em;
+    }
+
+    p {
+      font-size: .8em;
+    }
+  }
+
+  .lessons-name {
+    width: 250px;
+
+    h3 {
+      font-size: 1.6em;
+    }
+  }
+}
+
+@include responsive-768 {
+  .lessons-item {
+    width: 50%;
+  }
+
+  .introdue {
+
+    h1 {
+      font-size: 7em;
+    }
+
+    p {
+      font-size: .9em;
+    }
+  }
+}
+
+@include responsive-992 {
+  .lessons-item {
+    width: 40%;
+  }
+
+  .introdue {
+
+    h1 {
+      font-size: 8em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+@include responsive-1024 {
+  .lessons-item {
+    width: 30%;
+  }
+
+  .introdue {
+
+    h1 {
+      font-size: 9em;
+    }
+
+    p {
+      font-size: 1.1em;
+    }
+  }
+
+  .lessons-name {
+    width: 250px;
+
+    h3 {
+      font-size: 1.8em;
+    }
+  }
+}
+
+@include responsive-1200 {
+  .lessons-item {
+    width: 30%;
+  }
+
+  .introdue {
+
+    h1 {
+      font-size: 9em;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+  }
+}

@@ -1,4 +1,3 @@
-# Users
 User.create! name: "Example User", email: "example@railstutorial.org",
   type: "Teacher", password: "foobar", password_confirmation: "foobar"
 
@@ -13,12 +12,14 @@ type.each do |t|
   end
 end
 
-# Topics
-User.first.topics.create! name: "Temporary"
+users = User.order(:created_at).take(5)
+10.times do |n|
+  name = "topics-#{n+1}"
+  users.each { |user| user.topics.create!(name: name) }
+end
 
-# Lessons
-topic = Topic.first
-60.times do
-  title = Faker::Name.title
-  topic.lessons.create! name: title
+topics = Topic.order(:created_at).take(5)
+10.times do |n|
+  name = "lessons-#{n+1}"
+  topics.each { |topic| topic.lessons.create!(name: name) }
 end
