@@ -135,8 +135,7 @@ html {
 }
 
 .content-staticpage {
-  background: image-url('img_background.png');
-  margin-top: 35px;
+  margin-top: 150px;
   min-height: calc(100% - 150px);
 }
 
@@ -149,7 +148,7 @@ textarea {
 }
 
 .center {
-  background: none;
+  background: image-url('img_background.png');
   text-align: center;
 
   h1 {
@@ -305,6 +304,46 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
 }
+
+// devise-form
+
+.devise-form {
+  display: table;
+  line-height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+  input {
+    border: thin solid $black;
+    margin-bottom: 15px;
+    width: 100%;
+
+    &:hover {
+      border: 1.5px solid $yellow;
+    }
+  }
+
+  select {
+    background-color: $white;
+    border: thin solid $black;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: .5em 3.5em .5em 1em;
+  }
+
+  .inline {
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+
+  .clearboth {
+    clear: both;
+  }
+}
+
+// end signup-form
 
 // end body
 

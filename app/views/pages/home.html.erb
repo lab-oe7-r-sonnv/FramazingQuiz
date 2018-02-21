@@ -8,7 +8,8 @@
     <div class="paragraph">
       <p><%= t ".intro2" %></p>
     </div>
-    <%= link_to t(".get_started"), "#", class: "btn btn-lg btn-signup" %>
+    <%= link_to t(".get_started"),
+      new_user_registration_path, class: "btn btn-lg btn-signup" %>
   </div>
   <hr/>
   <div class="rawcontent">
@@ -33,6 +34,7 @@
         <% end %>
       </div>
     </div>
-  <%= link_to t(".get_started"), "#", class: "btn btn-lg btn-signup" %>
+    <%= link_to t(".get_started"),
+      new_user_registration_path, class: "btn btn-lg btn-signup" %>
   </div>
 </div>

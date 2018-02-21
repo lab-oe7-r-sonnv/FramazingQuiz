@@ -30,7 +30,8 @@ RemoveUnusedMethodsInControllersCheck: {
     LessonsController#edit,
     PagesController#show,
     PagesController#home,
-    ErrorsController#routing
+    ErrorsController#routing,
+    LessonsController#create
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
