@@ -7,7 +7,7 @@ class Lesson < ApplicationRecord
   accepts_nested_attributes_for :lesson_words, allow_destroy: true,
     reject_if: :invalid_fields?
 
-  scope :recent, -> {order(created_at: :desc)}
+  scope :recent, ->{order created_at: :desc}
 
   private
 
