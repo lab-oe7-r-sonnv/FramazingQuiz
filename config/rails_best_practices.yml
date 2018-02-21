@@ -24,8 +24,14 @@ RemoveEmptyHelpersCheck: { }
 #RemoveTabCheck: { }
 RemoveTrailingWhitespaceCheck: { }
 RemoveUnusedMethodsInControllersCheck: {
-  except_methods: [LessonsController#index, LessonsController#show,
-  LessonsController#new, LessonsController#edit]
+  except_methods: [LessonsController#index,
+    LessonsController#show,
+    LessonsController#new,
+    LessonsController#edit,
+    PagesController#show,
+    PagesController#home,
+    ErrorsController#routing
+  ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
 RemoveUnusedMethodsInModelsCheck: { except_methods: [] }

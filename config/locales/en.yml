@@ -1,2 +1,16 @@
 en:
-  hello: "Hello world"
+  layouts:
+    footer:
+      en: English
+      vn: Vietnamese
+    application:
+      fulltitle: Framazing Quiz
+    header:
+      signup: Signup
+      login: Login
+  pages:
+    home:
+      intro1: Simple tools for learning anything.
+      intro2: Search study sets or create your own. Improve your grades by studying with flashcards, tests and more.
+      countset: Study sets
+      getstated: Get Started!
