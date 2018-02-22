@@ -1,4 +1,41 @@
 en:
+  message:
+    success:
+      lesson_created: "Lesson created"
+      lesson_updated: "Lesson has been updated"
+      lesson_deleted: "Lesson deleted"
+    danger:
+      user_not_found: "User not found"
+      lesson_not_found: "Lesson not found"
+  lessons:
+    index:
+      title: "User's lessons"
+    new:
+      title: "Create a new lesson"
+      submit: "Create"
+    edit:
+      title: "Edit lesson"
+      submit: "Update"
+    lesson_word:
+      remove: "remove"
+    show:
+      title: "%{title}"
+      creator: "Creator"
+      term_text: "term"
+      edit: "Edit"
+      add_to: "Add to"
+      flash_card: "Flash card"
+      write: "Write"
+      test: "Test"
+      term: "Term"
+      def: "Definition"
+      delete: "Delete"
+      confirm: "You sure?"
+    form:
+      lab_name: "Title"
+      term: "Term"
+      def: "Definition"
+      add_term: "Add"
   layouts:
     footer:
       en: English

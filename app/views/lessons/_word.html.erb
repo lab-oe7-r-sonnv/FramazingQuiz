@@ -1,7 +1,14 @@
-<td><%= f.text_field :text, class: "form-control" %></td>
-<%= f.fields_for :definitions do |d|%>
-  <td>
-    <%= d.text_field :text, class: "form-control" %>
-    <%= d.hidden_field :correct, value: true %>
-  </td>
+<% if view_only %>
+  <td><%= f.object.text %></td>
+  <%= f.fields_for :definitions do |d|%>
+    <td><%= d.object.text %></td>
+  <% end %>
+<% else %>
+  <td><%= f.text_field :text, class: "form-control" %></td>
+  <%= f.fields_for :definitions do |d|%>
+    <td>
+      <%= d.text_field :text, class: "form-control" %>
+      <%= d.hidden_field :correct, value: true %>
+    </td>
+  <% end %>
 <% end %>

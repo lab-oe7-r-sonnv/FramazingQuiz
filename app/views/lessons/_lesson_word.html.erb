@@ -1,9 +1,11 @@
 <tr>
   <%= f.fields_for :word do |w| %>
-    <%= render "word", f: w %>
+    <%= render "word", f: w, view_only: view_only %>
   <% end %>
-  <td>
-    <%= f.hidden_field :_destroy %>
-    <%= link_to t(".remove"), "#", class: "remove_record" %>
-  </td>
+  <% unless view_only %>
+    <td>
+      <%= f.hidden_field :_destroy  %>
+      <%= link_to t(".remove"), "#", class: "remove_record" %>
+    </td>
+  <% end %>
 </tr>

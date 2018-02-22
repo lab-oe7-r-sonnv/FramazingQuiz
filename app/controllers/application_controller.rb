@@ -15,6 +15,11 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
+  def redirect_with_flash type, msg, url
+    flash[type] = msg
+    redirect_to url
+  end
+
   def routes_error
     render file: "public/404.html", status: :not_found
   end
