@@ -9,7 +9,7 @@ module ApplicationHelper
     lesson_word.build_word.definitions.build
     fields = builder.fields_for :lesson_words, lesson_word,
       child_index: id do |lw|
-      render "lessons/lesson_word", f: lw
+      render "lesson_word", f: lw, view_only: false
     end
     link_to t(".add_term"), "#", class: "add_fields btn btn-primary",
       data: {id: id, fields: fields.delete("\n")}

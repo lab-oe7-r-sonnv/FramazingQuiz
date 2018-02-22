@@ -1,4 +1,41 @@
 vi:
+  message:
+    success:
+      lesson_created: "Bài học đã được tạo"
+      lesson_updated: "Bài học đã được cập nhật"
+      lesson_deleted: "Đã xóa bài học"
+    danger:
+      user_not_found: "Không tìm thấy người dùng"
+      lesson_not_found: "Không tìm thấy bài học"
+  lessons:
+    index:
+      title: "Các bài học của người dùng"
+    new:
+      title: "Tạo một bài học mới"
+      submit: "Tạo"
+    edit:
+      title: "Chỉnh sửa bài học"
+      submit: "Cập nhật"
+    lesson_word:
+      remove: "xóa"
+    show:
+      title: "%{title}"
+      creator: "Người tạo"
+      term_text: "từ"
+      edit: "Sửa"
+      add_to: "Thêm vào"
+      flash_card: "Thẻ nhớ"
+      write: "Viết"
+      test: "Kiểm tra"
+      term: "Từ"
+      def: "Định nghĩa"
+      delete: "Xóa"
+      confirm: "Bạn có chắc chắn không?"
+    form:
+      lab_name: "Tên bài học"
+      term: "Từ"
+      def: "Định nghĩa"
+      add_term: "Thêm"
   layouts:
     footer:
       en: Tiếng Anh
