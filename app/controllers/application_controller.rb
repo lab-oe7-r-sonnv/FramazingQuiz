@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
   protect_from_forgery with: :exception
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -8,7 +9,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :gender, :type.capitalize])
+    devise_parameter_sanitizer.permit :sign_up,
+      keys: [:name, :gender, :type.capitalize]
   end
 
   private
@@ -28,5 +30,13 @@ class ApplicationController < ActionController::Base
 
   def routes_error
     render file: "public/404.html", status: :not_found
+  end
+
+  def add_word words, word
+    words << word
+  end
+
+  def remove_word words, word
+    words.delete word
   end
 end

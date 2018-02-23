@@ -6,7 +6,11 @@ Rails.application.routes.draw do
         get :lessons, to: "lessons#index"
       end
     end
-    resources :lessons, except: :index
+    resources :lessons, except: :index do
+      member do
+        resource :flashcards, only: %i(new update)
+      end
+    end
     resources :pages, only: :show
     root "pages#home", page: "home"
     get "*pages", to: "errors#routing"

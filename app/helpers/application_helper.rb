@@ -14,4 +14,16 @@ module ApplicationHelper
     link_to t(".add_term"), "#", class: "add_fields btn btn-primary",
       data: {id: id, fields: fields.delete("\n")}
   end
+
+  def finish_msg msg
+    @msg = msg
+  end
+
+  def words_size size
+    @size_of_words = size
+  end
+
+  def existing_word word
+    @current_word = word
+  end
 end

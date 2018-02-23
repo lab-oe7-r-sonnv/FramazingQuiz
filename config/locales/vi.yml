@@ -36,6 +36,15 @@ vi:
       term: "Từ"
       def: "Định nghĩa"
       add_term: "Thêm"
+  flashcards:
+    new:
+      title: Thẻ ghi nhớ
+    update:
+      finish_msg: Làm tốt lắm! Bạn đã học xong tất cả các thuật ngữ!
+    flashcards:
+      show_def: Hiện định nghĩa
+      next: Tiếp
+      prev: Quay lại
   layouts:
     footer:
       en: Tiếng Anh
