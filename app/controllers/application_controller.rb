@@ -32,11 +32,10 @@ class ApplicationController < ActionController::Base
     render file: "public/404.html", status: :not_found
   end
 
-  def add_word words, word
-    words << word
-  end
+  def find_lesson
+    @lesson = Lesson.find_by id: params[:id]
 
-  def remove_word words, word
-    words.delete word
+    return if lesson
+    routes_error
   end
 end

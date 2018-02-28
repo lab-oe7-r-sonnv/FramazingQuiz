@@ -3,6 +3,4 @@ class Definition < ApplicationRecord
 
   validates :text, presence: true
   validates :word, presence: true
-
-  scope :correct, ->{where correct: true}
 end

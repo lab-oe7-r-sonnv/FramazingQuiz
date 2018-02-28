@@ -38,25 +38,23 @@ vi:
       add_term: "Thêm"
   flashcards:
     new:
-      title: Thẻ ghi nhớ
-    update:
-      finish_msg: Làm tốt lắm! Bạn đã học xong tất cả các thuật ngữ!
-    flashcards:
-      show_def: Hiện định nghĩa
-      next: Tiếp
-      prev: Quay lại
+      title: "Thẻ ghi nhớ"
+      finish_msg: "Làm tốt lắm! Bạn đã học xong tất cả các thuật ngữ!"
+      panel_heading: "THẺ GHI NHỚ"
+      progress: "Tiến độ"
+      show_def: "Hiện định nghĩa"
   layouts:
     footer:
-      en: Tiếng Anh
-      vn: Tiếng Việt
+      en: "Tiếng Anh"
+      vn: "Tiếng Việt"
     application:
-      fulltitle: Framazing Quiz
+      fulltitle: "Framazing Quiz"
     header:
-      signup: Đăng kí
-      login: Đăng nhập
+      signup: "Đăng kí"
+      login: "Đăng nhập"
   pages:
     home:
-      intro1: Simple tools for learning anything.
-      intro2: Search study sets or create your own. Improve your grades by studying with flashcards, tests and more.
-      countset: Study sets
-      get_started: Get Started!
+      intro1: "Simple tools for learning anything."
+      intro2: "Search study sets or create your own. Improve your grades by studying with flashcards, tests and more."
+      countset: "Study sets"
+      get_started: "Get Started!"

@@ -1,0 +1,13 @@
+<div class="progress">
+  <div id="<%= progress_id %>" class="progress-bar <%= progress_class %>"
+    style="width: <%= progress %>%"></div>
+</div>
+
+<div class="progress-info">
+  <div class="col-md-4"><%= progress_name %></div>
+  <div class="col-md-8 info">
+    <div id="learnt_words" class="learnt-words"><%= words %></div>
+    <%= size.zero? ? "" : " / " %>
+    <div id="words_size" class="words-size"><%= size %></div>
+  </div>
+</div>

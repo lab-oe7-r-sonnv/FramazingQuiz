@@ -10,6 +10,7 @@ $gray: #999;
 $darkblue: #006;
 $lightyellow: #fc0;
 $sdarkgray: rgba(0, 0, 0, .1);
+$flashcard: #f0f0f0;
 
 // responsive variable
 
@@ -73,14 +74,12 @@ $res-1200: 'only screen and (min-width: 1200px)';
 
 .navbar-default {
   background-color: $layoutcol;
-  height: 80px;
 }
 
 // scss-lint:disable ImportantRule
 .navbar-nav {
-
   line-height: 50px;
-  margin-top: 16px;
+  margin: 5px;
 
   li {
 
@@ -135,7 +134,7 @@ html {
 }
 
 .content-staticpage {
-  margin-top: 150px;
+  margin-top: 100px;
   min-height: calc(100% - 150px);
 }
 
@@ -293,6 +292,7 @@ h1 {
   font-weight: 700;
   letter-spacing: -2px;
   margin-bottom: 30px;
+  margin-top: 0;
   text-align: center;
 }
 
@@ -307,9 +307,70 @@ h2 {
 
 // flashcard
 
-.flashcard-def {
+.finish {
   display: none;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 600px;
 }
+
+.row {
+  padding-left: 50px;
+  width: 100%;
+}
+
+.panel-heading {
+  text-align: center;
+}
+
+.progress-info {
+
+  .info {
+    text-align: right;
+  }
+
+  .learnt-words,
+  .words-size {
+    display: inline;
+  }
+}
+
+.flashcards {
+  background-color: $flashcard;
+  border-radius: 4px;
+  height: 361px;
+  margin: auto;
+  text-align: center;
+  width: 600px;
+
+  .words,
+  .def {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .text,
+  .def {
+    font-size: 34px;
+    font-weight: bold;
+    margin: auto;
+    padding: 25% 0;
+  }
+}
+
+.btn {
+  border-radius: 17px;
+}
+
+.learning {
+  margin-top: 20px;
+  text-align: center;
+}
+
+// end flashcard
 
 // devise-form
 
@@ -358,7 +419,6 @@ h2 {
 footer {
   background-color: $layoutcol;
   height: 150px;
-  margin-top: 45px;
   padding-top: 40px;
 
 // scss-lint:disable ImportantRule
