@@ -1,0 +1,15 @@
+<div class="write">
+  <div class="text">
+    <%= current_word %>
+  </div>
+
+  <div class="form-group answer-form">
+    <%= form_for :word, url: writes_path, method: :patch do |f| %>
+      <%= f.hidden_field :text, value: current_word %>
+      <%= f.text_field :definition, class: "form-control display-inline-block" %>
+      <%= f.label :definition, t(".your_answer") %>
+
+      <%= f.submit t(".answer"), class: "btn btn-primary display-inline-block" %>
+    <% end %>
+  </div>
+</div>

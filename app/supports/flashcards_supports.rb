@@ -11,7 +11,7 @@ class FlashcardsSupports
 
   def words_info
     @words_info = {
-      size: words.size,
+      size: words.count,
       new: flashcards_settings.new_learnt_words
     }
   end

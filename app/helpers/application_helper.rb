@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include WritesHelper
   def full_title page_title = ""
     base_title = t ".fulltitle"
     page_title.empty? ? base_title : page_title + " | " + base_title

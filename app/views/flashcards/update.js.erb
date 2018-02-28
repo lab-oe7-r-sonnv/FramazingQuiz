@@ -1,9 +1,0 @@
-$(document).ready(function(){
-  $("#show").click(function(){
-    $("#def").slideToggle();
-  });
-});
-
-$('#learn_flashcards').html('<%= j render("flashcards", msg: @msg,
-    learnt_words: @learnt_words, size_of_words: @size_of_words,
-    not_learnt_words: @not_learnt_words, current_word: @current_word) %>');

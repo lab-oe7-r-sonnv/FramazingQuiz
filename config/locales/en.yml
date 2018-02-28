@@ -36,13 +36,28 @@ en:
       term: "Term"
       def: "Definition"
       add_term: "Add"
+  learning:
+    finish_msg: "Well done! You've learnt all words!"
   flashcards:
     new:
       title: "Flashcard"
-      finish_msg: "Well done! You've learnt all words!"
       panel_heading: "FLASHCARD"
       progress: "Progress"
       show_def: "Show definition"
+  writes:
+    new:
+      title: "Write"
+    show:
+      start_again: "Start again"
+    write:
+      answer: "Answer"
+    heading: "WRITE"
+    remain:
+      name: "Remain"
+    correct:
+      name: "Correct"
+    incorrect:
+      name: "Incorrect"
   layouts:
     footer:
       en: "English"

@@ -3,7 +3,13 @@ flashcards:
   progress_id: "progress_bar"
   progress_class: ""
 writes:
-  remain_bar:
-    name: 
-    id:
-    class:
+  size: 0
+  remain:
+    css_class: ""
+    id: "remain_bar"
+  correct:
+    css_class: "green"
+    id: "correct_bar"
+  incorrect:
+    css_class: "red"
+    id: "incorrect_bar"

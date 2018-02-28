@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <%= support.heading %>
+  </div>
+
+  <div class="panel-body">
+    <div class="remain-bar">
+      <%= render "shared/progress_bar_info", progress: support.remain[:bar],
+        words: support.write_info[:remain_words_ids].count, size: support.size,
+        progress_name: support.remain[:name], progress_id: support.remain[:id],
+        progress_class: support.remain[:css_class] %>
+    </div>
+
+    <div class="incorrect-bar">
+      <%= render "shared/progress_bar_info", progress: support.incorrect[:bar],
+        words: support.write_info[:incorrect_words_ids].count, size: support.size,
+        progress_name: support.incorrect[:name], progress_id: support.incorrect[:id],
+        progress_class: support.incorrect[:css_class] %>
+    </div>
+
+    <div class="correct-bar">
+      <%= render "shared/progress_bar_info", progress: support.correct[:bar],
+        words: support.write_info[:correct_words_ids].count, size: support.size,
+        progress_name: support.correct[:name], progress_id: support.correct[:id],
+        progress_class: support.correct[:css_class] %>
+    </div>
+  </div>
+</div>

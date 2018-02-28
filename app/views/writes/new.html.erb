@@ -1,0 +1,11 @@
+<% provide :title, t(".title") %>
+
+<section class="row">
+  <div class="col-md-3">
+    <%= render "panel", support: @support %>
+  </div>
+
+  <div class="col-md-6">
+    <%= render "write", current_word: @support.lesson.current_word.text %>
+  </div>
+</section>

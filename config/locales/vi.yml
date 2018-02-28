@@ -36,13 +36,28 @@ vi:
       term: "Từ"
       def: "Định nghĩa"
       add_term: "Thêm"
+  learning:
+    finish_msg: "Làm tốt lắm! Bạn đã học xong tất cả các thuật ngữ!"
   flashcards:
     new:
       title: "Thẻ ghi nhớ"
-      finish_msg: "Làm tốt lắm! Bạn đã học xong tất cả các thuật ngữ!"
       panel_heading: "THẺ GHI NHỚ"
       progress: "Tiến độ"
       show_def: "Hiện định nghĩa"
+  writes:
+    new:
+      title: "Viết"
+    show:
+      start_again: "Bắt đầu lại"
+    write:
+      answer: "Answer"
+    heading: "VIẾT"
+    remain:
+      name: "Còn lại"
+    correct:
+      name: "Đúng"
+    incorrect:
+      name: "Sai"
   layouts:
     footer:
       en: "Tiếng Anh"

@@ -10,7 +10,7 @@ $gray: #999;
 $darkblue: #006;
 $lightyellow: #fc0;
 $sdarkgray: rgba(0, 0, 0, .1);
-$flashcard: #f0f0f0;
+$background: #f0f0f0;
 
 // responsive variable
 
@@ -127,6 +127,7 @@ $res-1200: 'only screen and (min-width: 1200px)';
 
 body,
 html {
+  background-color: $background;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -153,6 +154,14 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.bar {
+  margin: 0;
+}
+
+.small-padding {
+  padding: 4px;
 }
 
 .introdue {
@@ -336,7 +345,7 @@ h2 {
 }
 
 .flashcards {
-  background-color: $flashcard;
+  background-color: $white;
   border-radius: 4px;
   height: 361px;
   margin: auto;
@@ -371,6 +380,35 @@ h2 {
 }
 
 // end flashcard
+
+// writes
+
+.write {
+  background-color: $white;
+  border-radius: 4px;
+  height: 338px;
+  margin: auto;
+  text-align: center;
+  width: 815px;
+
+  .text {
+    font-size: 34px;
+    font-weight: bold;
+    margin: auto;
+  }
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.remain-bar,
+.correct-bar,
+.incorrect-bar {
+  padding-bottom: 45px;
+}
+
+// end writes
 
 // devise-form
 
