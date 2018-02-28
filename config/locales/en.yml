@@ -38,25 +38,23 @@ en:
       add_term: "Add"
   flashcards:
     new:
-      title: Flashcard
-    update:
-      finish_msg: Well done! You've learnt all words!
-    flashcards:
-      show_def: Show definition
-      next: Next
-      prev: Previous
+      title: "Flashcard"
+      finish_msg: "Well done! You've learnt all words!"
+      panel_heading: "FLASHCARD"
+      progress: "Progress"
+      show_def: "Show definition"
   layouts:
     footer:
-      en: English
-      vn: Vietnamese
+      en: "English"
+      vn: "Vietnamese"
     application:
-      fulltitle: Framazing Quiz
+      fulltitle: "Framazing Quiz"
     header:
-      signup: Signup
-      login: Login
+      signup: "Signup"
+      login: "Login"
   pages:
     home:
-      intro1: Simple tools for learning anything.
-      intro2: Search study sets or create your own. Improve your grades by studying with flashcards, tests and more.
-      countset: Study sets
-      get_started: Get Started!
+      intro1: "Simple tools for learning anything."
+      intro2: "Search study sets or create your own. Improve your grades by studying with flashcards, tests and more."
+      countset: "Study sets"
+      get_started: "Get Started!"

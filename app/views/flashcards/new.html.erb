@@ -1,8 +1,27 @@
 <% provide :title, t(".title") %>
-<h1><%= t ".title" %></h1>
 
-<div id="learn_flashcards">
-  <%= render "flashcards", learnt_words: @learnt_words, msg: @msg,
-    size_of_words: @size_of_words, not_learnt_words: @not_learnt_words,
-    current_word: @current_word %>
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div id="finish_msg" class="alert alert-success finish">
+      <%= t ".finish_msg" %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <%= render "panel", support: @support %>
+  </div>
+
+  <div class="col-md-6">
+    <div class="flashcards">
+      <%= render partial: "flashcards/word", collection: @support.words %>
+    </div>
+
+    <div class="learning">
+      <button id="prev" class="btn btn-primary glyphicon glyphicon-chevron-left"></button>
+      <button id="show" class="btn btn-info"><%= t ".show_def" %></button>
+      <button id="next" class="btn btn-primary glyphicon glyphicon-chevron-right"></button>
+    </div>
+  </div>
 </div>

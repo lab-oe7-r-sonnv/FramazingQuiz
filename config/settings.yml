@@ -1,0 +1,9 @@
+flashcards:
+  new_learnt_words: 1
+  progress_id: "progress_bar"
+  progress_class: ""
+writes:
+  remain_bar:
+    name: 
+    id:
+    class:

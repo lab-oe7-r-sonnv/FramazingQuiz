@@ -1,0 +1,9 @@
+<div class="words <%= word_counter.zero? ? "active" : "" %>">
+  <div class="text">
+    <%= word.text %>
+  </div>
+
+  <div class="def">
+    <%= word.correct_definition.text %>
+  </div>
+</div>

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     end
     resources :lessons, except: :index do
       member do
-        resource :flashcards, only: %i(new update)
+        resource :flashcards, only: :new
+        resource :writes, only: %i(new edit)
       end
     end
     resources :pages, only: :show
