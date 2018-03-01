@@ -2,10 +2,18 @@
 
 <section class="row">
   <div class="col-md-3">
-    <%= render "panel", support: @support %>
+    <div id="panel">
+      <%= render "panel", support: @support %>
+    </div>
+
+    <div id="result">
+      <%= render "result", support: @support %>
+    </div>
   </div>
 
   <div class="col-md-6">
-    <%= render "write", current_word: @support.lesson.current_word.text %>
+    <div id="write">
+      <%= render "write", current_word: @support.lesson.current_word.text %>
+    </div>
   </div>
 </section>

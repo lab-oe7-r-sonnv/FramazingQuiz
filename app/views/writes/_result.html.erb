@@ -1,0 +1,9 @@
+<% if support.write_info[:is_correct] == "true" %>
+  <div class="alert alert-success result-text">
+    <%= t ".correct_answer" %>
+  </div>
+<% elsif support.write_info[:is_correct] == "false" %>
+  <div class="alert alert-danger result-text">
+    <%= t ".wrong_answer" %>
+  </div>
+<% end %>

@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function() {
       $('.active').removeClass('active').addClass('inactive');
       $('.inactive').next().addClass('active');
       $('.words').hide();
-      $('.active').show();
+      $('.active').fadeIn();
       $('.inactive').removeClass('inactive');
     }
   });
@@ -33,16 +33,16 @@ $(document).on('turbolinks:load', function() {
       $('.inactive').prev().addClass('active');
       $('.inactive').removeClass('inactive');
       $('.words').hide();
-      $('.active').show();
+      $('.active').fadeIn();
     }
   });
 
   $('#show').on('click', function() {
     if ($('.active > .text').is(':visible')) {
       $('.active > .text').hide();
-      $('.active > .def').show();
+      $('.active > .def').fadeIn();
     } else {
-      $('.active > .text').show();
+      $('.active > .text').fadeIn();
       $('.active > .def').hide();
     }
   });

@@ -1,16 +1,17 @@
 class WritesSupports
   attr_reader :lesson
 
-  def initialize new_lesson, remain_ids, incorrect_ids, correct_ids
-    new_lesson.setup_write remain_ids, incorrect_ids, correct_ids
+  def initialize new_lesson, remain_ids, incorrect_ids, correct_ids, is_correct
+    new_lesson.setup_write remain_ids, incorrect_ids, correct_ids, is_correct
     @lesson = new_lesson
   end
 
   def write_info
     Hash[
-      remain_words_ids: lesson.remain_words_ids,
-      incorrect_words_ids: lesson.incorrect_words_ids,
-      correct_words_ids: lesson.correct_words_ids,
+      is_correct: lesson_info[:is_correct],
+      remain_words_ids: lesson_info[:remains],
+      incorrect_words_ids: lesson_info[:incorrects],
+      correct_words_ids: lesson_info[:corrects],
       current_word_id: lesson.current_word.id,
       words_size: lesson.words.count
     ]
@@ -26,7 +27,8 @@ class WritesSupports
 
   def remain
     Hash[
-      css_class: remain_settings.css_class,
+      bar_class: remain_settings.bar_class,
+      pbar_class: remain_settings.pbar_class,
       name: I18n.t("writes.remain.name"),
       bar: (write_info[:remain_words_ids].count /
         write_info[:words_size].to_f * 100),
@@ -36,7 +38,8 @@ class WritesSupports
 
   def correct
     Hash[
-      css_class: correct_settings.css_class,
+      bar_class: correct_settings.bar_class,
+      pbar_class: correct_settings.pbar_class,
       name: I18n.t("writes.correct.name"),
       bar: (write_info[:correct_words_ids].count /
         write_info[:words_size].to_f * 100),
@@ -46,7 +49,8 @@ class WritesSupports
 
   def incorrect
     Hash[
-      css_class: incorrect_settings.css_class,
+      bar_class: incorrect_settings.bar_class,
+      pbar_class: incorrect_settings.pbar_class,
       name: I18n.t("writes.incorrect.name"),
       bar: (write_info[:incorrect_words_ids].count /
         write_info[:words_size].to_f * 100),
@@ -66,5 +70,9 @@ class WritesSupports
 
   def correct_settings
     Settings.writes.correct
+  end
+
+  def lesson_info
+    lesson.lesson_info
   end
 end

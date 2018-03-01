@@ -8,3 +8,6 @@ exclude_paths:
 "app/helpers":
   FeatureEnvy:
     enabled: false
+LongParameterList:
+  exclude:
+    - "Lesson#setup_write"

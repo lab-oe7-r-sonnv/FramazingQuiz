@@ -50,7 +50,11 @@ en:
     show:
       start_again: "Start again"
     write:
+      your_answer: "Your answer"
       answer: "Answer"
+    result:
+      correct_answer: "Correct answer"
+      wrong_answer: "Wrong answer"
     heading: "WRITE"
     remain:
       name: "Remain"

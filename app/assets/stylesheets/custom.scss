@@ -11,6 +11,11 @@ $darkblue: #006;
 $lightyellow: #fc0;
 $sdarkgray: rgba(0, 0, 0, .1);
 $background: #f0f0f0;
+$lightgray: #ccc;
+$bisque: #ffe4c4;
+$salmon: #fa8072;
+$aliceblue: #f0f8ff;
+$darkseagreen: #8fbc8f;
 
 // responsive variable
 
@@ -386,7 +391,7 @@ h2 {
 .write {
   background-color: $white;
   border-radius: 4px;
-  height: 338px;
+  height: 368px;
   margin: auto;
   text-align: center;
   width: 815px;
@@ -396,6 +401,49 @@ h2 {
     font-weight: bold;
     margin: auto;
   }
+}
+
+.result-panel {
+  float: none;
+  width: 100%;
+}
+
+.result-text {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 60px;
+}
+
+.soft-red {
+  background-color: $bisque;
+}
+
+.red {
+  background-color: $salmon;
+}
+
+.soft-green {
+  background-color: $aliceblue;
+}
+
+.green {
+  background-color: $darkseagreen;
+}
+
+.answer-form {
+  align-items: center;
+  border-top: 1px solid $lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.answer-text {
+  flex-basis: 80%;
 }
 
 .display-inline-block {

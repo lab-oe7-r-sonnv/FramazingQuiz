@@ -1,5 +1,5 @@
 class Lesson < ApplicationRecord
-  attr_reader :correct_words_ids, :incorrect_words_ids
+  attr_reader :correct_words_ids, :incorrect_words_ids, :is_correct
   belongs_to :topic
 
   has_many :lesson_words, dependent: :destroy
@@ -10,22 +10,23 @@ class Lesson < ApplicationRecord
 
   scope :recent, ->{order created_at: :desc}
 
-  def setup_write remain_ids, incorrect_ids, correct_ids
-    @remain_words_ids = remain_ids
-    @incorrect_words_ids = incorrect_ids
-    @correct_words_ids = correct_ids
+  def setup_write remain_ids, incorrect_ids, correct_ids, is_correct
+    lesson_info[:remains] = remain_ids
+    lesson_info[:incorrects] = incorrect_ids
+    lesson_info[:corrects] = correct_ids
+    lesson_info[:is_correct] = is_correct
+  end
+
+  def lesson_info
+    @lesson_info ||= Hash.new
   end
 
   def new_word
-    @current_word = Word.find_by id: remain_words_ids.sample
+    @current_word = Word.find_by id: lesson_info[:remains].sample
   end
 
   def current_word
     @current_word ||= new_word
-  end
-
-  def remain_words_ids
-    @remain_words_ids ||= Array.new
   end
 
   private
