@@ -38,4 +38,12 @@ class ApplicationController < ActionController::Base
     return if lesson
     routes_error
   end
+
+  def add_word words, word
+    words << word
+  end
+
+  def remove_word words, word
+    words.delete word
+  end
 end

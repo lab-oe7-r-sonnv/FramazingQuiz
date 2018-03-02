@@ -1,12 +1,13 @@
 <footer class="footer">
   <div class="container">
     <nav>
+      <%= link_to t(".framazingquiz"), root_path, class: "logo navbar-b" %>
       <ul>
         <li><%= link_to t(".en"), {locale: :en} %></li>
         <li><%= link_to t(".vn"), {locale: :vi} %></li>
       </ul>
-       <%= link_to t(".framazingquiz"), root_path, class: "logo navbar-b" %>
     </nav>
+
   </div>
   <p>© <%= Date.today.year %> Framazing Quiz.</p>
 </footer>
