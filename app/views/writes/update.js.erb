@@ -1,0 +1,12 @@
+$(document).ready(function() {
+  $('#panel').html('<%= j render "panel", support: @support %>');
+  $('#result').html('<%= j render "result", support: @support %>');
+  $('#write').html('<%= j render "write", current_word: @support.lesson.current_word.text %>');
+
+  $('#result').hide();
+  $('#result').fadeIn();
+
+  $('#text').hide();
+  $('#text').fadeIn();
+  $('#answer').focus();
+});

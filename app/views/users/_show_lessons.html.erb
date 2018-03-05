@@ -1,0 +1,12 @@
+<% provide :title, title %>
+<div class="row">
+  <div class="col-md-8">
+    <h3><%= title %></h3>
+    <% if lessons.any? %>
+      <ul class="lessons">
+        <%= render partial: "lessons/lesson", collection: lessons %>
+      </ul>
+      <%= will_paginate lessons %>
+    <% end %>
+  </div>
+</div>

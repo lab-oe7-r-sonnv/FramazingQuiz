@@ -1,0 +1,35 @@
+<% provide :title, t(".title", title: @lesson.name) %>
+<h1><%= t ".title", title: @lesson.name %></h1>
+<%= "(#{pluralize @lesson.lesson_words.count, t(".term_text")})" %><br>
+<strong><%= "#{t(".creator")}: #{@lesson.topic.creator.name}" %></strong>
+
+<div class="manage_options">
+  <%= link_to t(".add_to"), "#" %> |
+  <% if true %>
+    <%= link_to t(".edit"), edit_lesson_path(@lesson) %> |
+    <%= link_to t(".delete"), @lesson, method: :delete, data: {confirm:
+      t(".confirm")} %>
+  <% end %>
+</div>
+
+<div class="learning_options">
+  <%= link_to t(".flash_card"), "#" %> |
+  <%= link_to t(".write"), "#" %> |
+  <%= link_to t(".test"), "#" %>
+</div>
+
+<%= form_for @lesson do |l| %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th><%= t ".term" %></th>
+      <th><%= t ".def" %></th>
+    </tr>
+    </thead>
+    <tbody class="fields">
+      <%= l.fields_for :lesson_words do |lw| %>
+        <%= render "lesson_word", f: lw, view_only: true %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -1,0 +1,125 @@
+vi:
+  devise:
+    confirmations:
+      new:
+        resend: "Gửi lại email đặt lại mật khẩu"
+    mailer:
+      confirmation_instructions:
+        hello: "Chào mừng"
+        confirm: "Xác nhận tài khoản"
+        message:
+          one: "Bạn hãy xác nhận tài khoản qua đường dẫn bên dưới:"
+      reset_password_instructions:
+        hello: "Chào"
+      change: "Đổi mật khẩu"
+      message:
+        one: "Ai đó đã yêu cầu đặt lại mật khẩu của bạn. Bạn có thể làm điều này bằng cách bấm vào đường dẫn phía dưới."
+        two: "Nếu bạn không yêu cầu đặt lại mật khẩu, hãy bỏ qua thông báo này."
+        three: "Mật khẩu của bạn sẽ không thay đổi trừ khi bạn bấm vào đường dẫn và đặt lại mật khẩu."
+    passwords:
+      new:
+        forgot_password?: "Quên mật khẩu?"
+        send_me: "Đặt lại mật khẩu"
+      edit:
+        change_password: "Đặt lại mật khẩu"
+        new_password: "Mật khẩu mới"
+        confirm_new_pass: "Xác nhận lại mật khẩu"
+        change: "Đặt lại mật khẩu"
+        minium_char: "kí tự tối thiểu"
+    registrations:
+      new:
+        sign_up: "Đăng kí"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        minium_char: "kí tự tối thiểu"
+    sessions:
+      new:
+        log_in: "Đăng nhập"
+        password: "Mật khẩu"
+        remember: "Nhớ mật khẩu"
+    shared:
+      links:
+        log_in: "Đăng nhập"
+        sign_up: "Đăng kí"
+        forgot_password?: "Quên mật khẩu?"
+        didnt_receive_confirm?: "Không nhận được email quên mật khẩu?"
+        sign_in_with: "Đăng nhập bằng"
+  message:
+    success:
+      lesson_created: "Bài học đã được tạo"
+      lesson_updated: "Bài học đã được cập nhật"
+      lesson_deleted: "Đã xóa bài học"
+    danger:
+      user_not_found: "Không tìm thấy người dùng"
+      lesson_not_found: "Không tìm thấy bài học"
+  lessons:
+    index:
+      title: "Các bài học của người dùng"
+    new:
+      title: "Tạo một bài học mới"
+      submit: "Tạo"
+    edit:
+      title: "Chỉnh sửa bài học"
+      submit: "Cập nhật"
+    lesson_word:
+      remove: "xóa"
+    show:
+      title: "%{title}"
+      creator: "Người tạo"
+      term_text: "từ"
+      edit: "Sửa"
+      add_to: "Thêm vào"
+      flash_card: "Thẻ nhớ"
+      write: "Viết"
+      test: "Kiểm tra"
+      term: "Từ"
+      def: "Định nghĩa"
+      delete: "Xóa"
+      confirm: "Bạn có chắc chắn không?"
+    form:
+      lab_name: "Tên bài học"
+      term: "Từ"
+      def: "Định nghĩa"
+      add_term: "Thêm"
+  learning:
+    finish_msg: "Làm tốt lắm! Bạn đã học xong tất cả các thuật ngữ!"
+  flashcards:
+    new:
+      title: "Thẻ ghi nhớ"
+      panel_heading: "THẺ GHI NHỚ"
+      progress: "Tiến độ"
+      show_def: "Hiện định nghĩa"
+  writes:
+    new:
+      title: "Viết"
+    show:
+      start_again: "Bắt đầu lại"
+    write:
+      your_answer: "Đáp án của bạn"
+      answer: "Trả lời"
+    result:
+      correct_answer: "Chính xác"
+      correct_answer: "Câu trả lời sai"
+      wrong_answer: "Wrong answer"
+    heading: "VIẾT"
+    remain:
+      name: "Còn lại"
+    correct:
+      name: "Đúng"
+    incorrect:
+      name: "Sai"
+  layouts:
+    footer:
+      en: "Tiếng Anh"
+      vn: "Tiếng Việt"
+    application:
+      fulltitle: "Framazing Quiz"
+    header:
+      signup: "Đăng kí"
+      login: "Đăng nhập"
+  pages:
+    home:
+      intro1: "Simple tools for learning anything."
+      intro2: "Search study sets or create your own. Improve your grades by studying with flashcards, tests and more."
+      countset: "Study sets"
+      get_started: "Get Started!"

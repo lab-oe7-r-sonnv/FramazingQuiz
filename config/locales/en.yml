@@ -1,0 +1,128 @@
+en:
+  devise:
+    confirmations:
+      new:
+        resend: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        hello: "Welcome"
+        confirm: "Confirm my account"
+        message:
+          one: "You can confirm your account email through the link below:"
+      password_change:
+        hello: "Hello"
+        message:
+          one: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        hello: "Hello"
+      change: "Change my password"
+      message:
+        one: "Someone has requested a link to change your password. You can do this through the link below."
+        two: "If you didn't request this, please ignore this email."
+        three: "Your password won't change until you access the link above and create a new one."
+    passwords:
+      new:
+        forgot_password?: "Forgot password?"
+        send_me: "Send me reset password instructions"
+      edit:
+        change_password: "Change your password"
+        new_password: "New password"
+        confirm_new_pass: "Confirm new password"
+        change: "Change my password"
+        minium_char: "characters minimum"
+    registrations:
+      new:
+        sign_up: "Sign up"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        minium_char: "character minium"
+    sessions:
+      new:
+        log_in: "Log in"
+        password: "Password"
+        remember: "Remember me"
+    shared:
+      links:
+        log_in: "Log in"
+        sign_up: "Sign up"
+        forgot_password?: "Forgot password?"
+        didnt_receive_confirm?: "Didn't recieve password confimation?"
+        sign_in_with: "Sign in with"
+  message:
+    success:
+      lesson_created: "Lesson created"
+      lesson_updated: "Lesson has been updated"
+      lesson_deleted: "Lesson deleted"
+    danger:
+      user_not_found: "User not found"
+      lesson_not_found: "Lesson not found"
+  lessons:
+    index:
+      title: "User's lessons"
+    new:
+      title: "Create a new lesson"
+      submit: "Create"
+    edit:
+      title: "Edit lesson"
+      submit: "Update"
+    lesson_word:
+      remove: "remove"
+    show:
+      title: "%{title}"
+      creator: "Creator"
+      term_text: "term"
+      edit: "Edit"
+      add_to: "Add to"
+      flash_card: "Flash card"
+      write: "Write"
+      test: "Test"
+      term: "Term"
+      def: "Definition"
+      delete: "Delete"
+      confirm: "You sure?"
+    form:
+      lab_name: "Title"
+      term: "Term"
+      def: "Definition"
+      add_term: "Add"
+  learning:
+    finish_msg: "Well done! You've learnt all words!"
+  flashcards:
+    new:
+      title: "Flashcard"
+      panel_heading: "FLASHCARD"
+      progress: "Progress"
+      show_def: "Show definition"
+  writes:
+    new:
+      title: "Write"
+    show:
+      start_again: "Start again"
+    write:
+      your_answer: "Your answer"
+      answer: "Answer"
+    result:
+      correct_answer: "Correct answer"
+      wrong_answer: "Wrong answer"
+    heading: "WRITE"
+    remain:
+      name: "Remain"
+    correct:
+      name: "Correct"
+    incorrect:
+      name: "Incorrect"
+  layouts:
+    footer:
+      en: "English"
+      vn: "Vietnamese"
+    application:
+      fulltitle: "Framazing Quiz"
+    header:
+      signup: "Signup"
+      login: "Login"
+  pages:
+    home:
+      intro1: "Simple tools for learning anything."
+      intro2: "Search study sets or create your own. Improve your grades by studying with flashcards, tests and more."
+      countset: "Study sets"
+      get_started: "Get Started!"
