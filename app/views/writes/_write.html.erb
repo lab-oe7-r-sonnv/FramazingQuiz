@@ -1,13 +1,15 @@
-<div class="write">
-  <div class="text">
+<div class="write d-flex">
+  <div class="text" id="text">
     <%= current_word %>
   </div>
 
-  <div class="form-group answer-form">
-    <%= form_for :word, url: writes_path, method: :patch do |f| %>
+  <div class="form-group">
+    <%= form_for :word, url: writes_path, method: :patch,
+      html: {class: "answer-form"}, remote: !last_correct_word? do |f| %>
+
       <%= f.hidden_field :text, value: current_word %>
-      <%= f.text_field :definition, class: "form-control display-inline-block" %>
-      <%= f.label :definition, t(".your_answer") %>
+      <%= f.text_field :definition, placeholder: t(".your_answer"), id: "answer",
+        autocomplete: "off", class: "form-control display-inline-block answer-text" %>
 
       <%= f.submit t(".answer"), class: "btn btn-primary display-inline-block" %>
     <% end %>

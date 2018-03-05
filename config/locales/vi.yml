@@ -50,7 +50,12 @@ vi:
     show:
       start_again: "Bắt đầu lại"
     write:
-      answer: "Answer"
+      your_answer: "Đáp án của bạn"
+      answer: "Trả lời"
+    result:
+      correct_answer: "Chính xác"
+      correct_answer: "Câu trả lời sai"
+      wrong_answer: "Wrong answer"      
     heading: "VIẾT"
     remain:
       name: "Còn lại"
