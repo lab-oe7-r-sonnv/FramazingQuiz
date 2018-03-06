@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActionController::RoutingError, with: :routes_error
 
+  rescue_from CanCan::AccessDenied do
+    redirect_with_flash :danger, t("message.danger.access_denied"), root_url
+  end
+
   protected
 
   def configure_permitted_parameters

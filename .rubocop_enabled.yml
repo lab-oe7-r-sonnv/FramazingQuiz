@@ -79,10 +79,6 @@ Naming/ClassAndModuleCamelCase:
   Description: "Use CamelCase for classes and modules."
   Enabled: true
 
-Style/ClassAndModuleChildren:
-  Description: "Checks style of children classes and modules."
-  Enabled: true
-
 Style/ClassCheck:
   Description: "Enforces consistent use of `Object#is_a?` or `Object#kind_of?`."
   Enabled: true
@@ -125,10 +121,6 @@ Style/PreferredHashMethods:
   Description: "Checks for use of deprecated Hash methods."
   Enabled: true
 
-Style/Documentation:
-  Description: "Document classes and non-namespace modules."
-  Enabled: true
-
 Layout/DotPosition:
   Description: "Checks the position of the dot in multi-line method calls."
   Enabled: true
@@ -149,10 +141,6 @@ Layout/EmptyLines:
   Description: "Don't use several empty lines in a row."
   Enabled: true
 
-Layout/EmptyLinesAroundAccessModifier:
-  Description: "Keep blank lines around access modifiers."
-  Enabled: true
-
 Layout/EmptyLinesAroundBlockBody:
   Description: "Keeps track of empty lines around expression bodies."
   Enabled: true
@@ -163,10 +151,6 @@ Layout/EmptyLinesAroundClassBody:
 
 Layout/EmptyLinesAroundModuleBody:
   Description: "Keeps track of empty lines around expression modules."
-  Enabled: true
-
-Style/EmptyLiteral:
-  Description: "Prefer literals to Array.new/Hash.new/String.new."
   Enabled: true
 
 Style/Encoding:
@@ -511,7 +495,11 @@ Layout/TrailingBlankLines:
   Description: "Checks trailing blank lines and final newline."
   Enabled: true
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  Description: "Checks for trailing comma in parameter lists and literals."
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
   Description: "Checks for trailing comma in parameter lists and literals."
   Enabled: true
 
@@ -580,11 +568,11 @@ Lint/AmbiguousRegexpLiteral:
                  a method invocation without parenthesis.
   Enabled: true
 
-Lint/BlockAlignment:
+Layout/BlockAlignment:
   Description: "Align block ends correctly."
   Enabled: true
 
-Lint/ConditionPosition:
+Layout/ConditionPosition:
   Description: "Checks for condition placed in a confusing position relative to the keyword."
   Enabled: true
 
@@ -592,7 +580,7 @@ Lint/Debugger:
   Description: "Check for debugger calls."
   Enabled: true
 
-Lint/DefEndAlignment:
+Layout/DefEndAlignment:
   Description: "Align ends corresponding to defs correctly."
   Enabled: true
 
@@ -612,7 +600,7 @@ Lint/EmptyInterpolation:
   Description: "Checks for empty string interpolation."
   Enabled: true
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   Description: "Align ends correctly."
   Enabled: true
 

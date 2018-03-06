@@ -1,14 +1,30 @@
 <% if view_only %>
-  <td><%= f.object.text %></td>
-  <%= f.fields_for :definitions do |d|%>
-    <td><%= d.object.text %></td>
-  <% end %>
+  <div class="col-md-6 bg-white mt-5 mb-5 px-10">
+    <div class="border-right word">
+      <%= f.object.text %>
+    </div>
+  </div>
+
+  <div class="col-md-6 bg-white mt-5 mb-5 px-10">
+    <div class="word">
+      <%= f.fields_for :definitions do |d|%>
+        <%= d.object.text %>
+      <% end %>
+    </div>
+  </div>
 <% else %>
-  <td><%= f.text_field :text, class: "form-control" %></td>
-  <%= f.fields_for :definitions do |d|%>
-    <td>
-      <%= d.text_field :text, class: "form-control" %>
-      <%= d.hidden_field :correct, value: true %>
-    </td>
-  <% end %>
+  <div class="col-md-5 bg-white mt-5 mb-5 px-10">
+    <div class="border-right word">
+        <%= f.text_field :text, class: "no-border border-bottom" %>
+    </div>
+  </div>
+
+  <div class="col-md-5 bg-white mt-5 mb-5 px-10">
+    <div class="word">
+      <%= f.fields_for :definitions do |d|%>
+        <%= d.text_field :text, class: "no-border border-bottom" %>
+        <%= d.hidden_field :correct, value: true %>
+      <% end %>
+    </div>
+  </div>
 <% end %>

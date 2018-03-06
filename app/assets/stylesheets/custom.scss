@@ -200,6 +200,45 @@ textarea {
   }
 }
 
+.lessons {
+  list-style-type: none;
+}
+
+.lessons-index-item {
+  text-decoration: none;
+}
+
+.no-text-decor {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.hover-bottom {
+  &:hover {
+    border-bottom: 2px solid $gray;
+  }
+}
+
+.lessons-header {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.lessons-edit-header {
+  border-bottom: 1px solid $white;
+  font-weight: bold;
+}
+
+.lessons-words {
+  padding: 20px 0;
+}
+
+.lessons-title {
+  margin-top: 30px;
+  text-align: left;
+}
+
 .lessons-list {
 
   margin: 50px;
@@ -272,12 +311,63 @@ textarea {
 }
 
 hr {
-  border: 0;
-  border-top: 5px dotted $black;
   display: block;
-  height: 2px;
+  height: 1px;
   margin: 1em 0;
   padding: 0;
+}
+
+.word {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.px-10 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.px-20 {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.no-border {
+  border: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.border-right {
+  border-right: 1px solid $lightgray;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $lightgray;
 }
 
 .btn-signup {
@@ -332,6 +422,8 @@ h2 {
 }
 
 .panel-heading {
+  font-size: 16px;
+  font-weight: bold;
   text-align: center;
 }
 
