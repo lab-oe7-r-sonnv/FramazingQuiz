@@ -16,8 +16,20 @@
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <li><%= link_to t(".logout"), destroy_user_session_path,
-              method: :delete, class: "logout" %></li>
+            <li><%= link_to t(".create_lesson"), new_lesson_path %></li>
+            <li class="dropdown">
+              <%= link_to "#", class: "dropdown-toggle blue", data: {toggle: "dropdown"} do %>
+                <%= t ".nav.account" %>
+                <b class="caret"></b>
+              <% end %>
+
+              <ul class="dropdown-menu blue">
+                <li><%= link_to t(".my_lessons"), lessons_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li><%= link_to t(".logout"), destroy_user_session_path,
+                  method: :delete, class: "logout" %></li>
+              </ul>
+            </li>
           <% else %>
             <li><%= link_to t(".login"), new_user_session_path, class: "login" %></li>
             <li><%= link_to t(".signup"), new_user_registration_path,
