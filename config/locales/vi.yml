@@ -11,11 +11,11 @@ vi:
           one: "Bạn hãy xác nhận tài khoản qua đường dẫn bên dưới:"
       reset_password_instructions:
         hello: "Chào"
-      change: "Đổi mật khẩu"
-      message:
-        one: "Ai đó đã yêu cầu đặt lại mật khẩu của bạn. Bạn có thể làm điều này bằng cách bấm vào đường dẫn phía dưới."
-        two: "Nếu bạn không yêu cầu đặt lại mật khẩu, hãy bỏ qua thông báo này."
-        three: "Mật khẩu của bạn sẽ không thay đổi trừ khi bạn bấm vào đường dẫn và đặt lại mật khẩu."
+        change: "Đổi mật khẩu"
+        message:
+          one: "Ai đó đã yêu cầu đặt lại mật khẩu của bạn. Bạn có thể làm điều này bằng cách bấm vào đường dẫn phía dưới."
+          two: "Nếu bạn không yêu cầu đặt lại mật khẩu, hãy bỏ qua thông báo này."
+          three: "Mật khẩu của bạn sẽ không thay đổi trừ khi bạn bấm vào đường dẫn và đặt lại mật khẩu."
     passwords:
       new:
         forgot_password?: "Quên mật khẩu?"
@@ -42,7 +42,7 @@ vi:
         log_in: "Đăng nhập"
         sign_up: "Đăng kí"
         forgot_password?: "Quên mật khẩu?"
-        didnt_receive_confirm?: "Không nhận được email quên mật khẩu?"
+        didnt_receive_confirm?: "Không nhận được email đặt lại mật khẩu?"
         sign_in_with: "Đăng nhập bằng"
   message:
     success:
@@ -72,13 +72,13 @@ vi:
       flash_card: "Thẻ nhớ"
       write: "Viết"
       test: "Kiểm tra"
-      term: "Từ"
+      word: "Từ"
       def: "Định nghĩa"
       delete: "Xóa"
       confirm: "Bạn có chắc chắn không?"
     form:
       lab_name: "Tên bài học"
-      term: "Từ"
+      word: "Từ"
       def: "Định nghĩa"
       add_term: "Thêm"
   learning:
@@ -99,8 +99,7 @@ vi:
       answer: "Trả lời"
     result:
       correct_answer: "Chính xác"
-      correct_answer: "Câu trả lời sai"
-      wrong_answer: "Wrong answer"
+      wrong_answer: "Câu trả lời sai"
     heading: "VIẾT"
     remain:
       name: "Còn lại"
@@ -119,7 +118,7 @@ vi:
       login: "Đăng nhập"
   pages:
     home:
-      intro1: "Simple tools for learning anything."
-      intro2: "Search study sets or create your own. Improve your grades by studying with flashcards, tests and more."
-      countset: "Study sets"
-      get_started: "Get Started!"
+      intro1: "Công cụ đơn giản để học mọi thứ."
+      intro2: "Tìm kiếm các bài học hoặc tự tạo cho chính mình. Cải thiện điểm số bằng cách học thẻ ghi nhớ, kiểm tra và nhiều hơn nữa."
+      countset: "Các bài học"
+      get_started: "Bắt đầu nào!"

@@ -1,5 +1,6 @@
 module ApplicationHelper
   include WritesHelper
+
   def full_title page_title = ""
     base_title = t ".fulltitle"
     page_title.empty? ? base_title : page_title + " | " + base_title
@@ -12,7 +13,7 @@ module ApplicationHelper
       child_index: id do |lw|
       render "lesson_word", f: lw, view_only: false
     end
-    link_to t(".add_term"), "#", class: "add_fields btn btn-primary",
+    link_to t(".add_term"), "#", class: "add_fields btn btn-default",
       data: {id: id, fields: fields.delete("\n")}
   end
 end

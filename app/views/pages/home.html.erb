@@ -24,7 +24,7 @@
               </div>
               <div class= "lessons-author">
                 <%= image_tag "default-avatar.png" %>
-                <%= link_to item.topic.creator.name , "#" %>
+                <%= link_to item.topic.creator.name , lesson_path(item) %>
               </div>
               <div class= "lessons-name">
                 <h3><%= item.name %></h3>
