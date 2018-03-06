@@ -15,11 +15,11 @@ en:
           one: "We're contacting you to notify you that your password has been changed."
       reset_password_instructions:
         hello: "Hello"
-      change: "Change my password"
-      message:
-        one: "Someone has requested a link to change your password. You can do this through the link below."
-        two: "If you didn't request this, please ignore this email."
-        three: "Your password won't change until you access the link above and create a new one."
+        change: "Change my password"
+        message:
+          one: "Someone has requested a link to change your password. You can do this through the link below."
+          two: "If you didn't request this, please ignore this email."
+          three: "Your password won't change until you access the link above and create a new one."
     passwords:
       new:
         forgot_password?: "Forgot password?"
@@ -76,13 +76,13 @@ en:
       flash_card: "Flash card"
       write: "Write"
       test: "Test"
-      term: "Term"
+      word: "Term"
       def: "Definition"
       delete: "Delete"
       confirm: "You sure?"
     form:
       lab_name: "Title"
-      term: "Term"
+      word: "Word"
       def: "Definition"
       add_term: "Add"
   learning:

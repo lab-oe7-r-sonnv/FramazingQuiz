@@ -4,25 +4,21 @@
 <strong><%= "#{t(".creator")}: #{@lesson.topic.creator.name}" %></strong>
 
 <div class="manage_options">
-  <%= link_to t(".add_to"), "#" %> |
-  <% if true %>
-    <%= link_to t(".edit"), edit_lesson_path(@lesson) %> |
-    <%= link_to t(".delete"), @lesson, method: :delete, data: {confirm:
-      t(".confirm")} %>
-  <% end %>
+  <%= link_to t(".edit"), edit_lesson_path(@lesson.id) %> |
+  <%= link_to t(".delete"), @lesson, method: :delete, data: {confirm:
+    t(".confirm")} %>
 </div>
 
 <div class="learning_options">
-  <%= link_to t(".flash_card"), "#" %> |
-  <%= link_to t(".write"), "#" %> |
-  <%= link_to t(".test"), "#" %>
+  <%= link_to t(".flash_card"), new_flashcards_path(@lesson.id) %> |
+  <%= link_to t(".write"), new_writes_path(@lesson.id) %>
 </div>
 
 <%= form_for @lesson do |l| %>
   <table class="table">
     <thead>
     <tr>
-      <th><%= t ".term" %></th>
+      <th><%= t ".word" %></th>
       <th><%= t ".def" %></th>
     </tr>
     </thead>

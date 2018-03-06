@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
     if user
       lessons = user.lessons.paginate page: params[:page]
       render "users/_show_lessons", locals: {title: title, user: user, lessons:
-          lessons}
+        lessons}
     else
       redirect_with_flash :danger, t("message.danger.user_not_found"), root_url
     end
