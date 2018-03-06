@@ -19,14 +19,8 @@ end
 
 users = User.order(:created_at).take(5)
 10.times do |n|
-  name = "topics-#{n+1}"
-  users.each { |user| user.topics.create!(name: name) }
-end
-
-topics = Topic.order(:created_at).take(5)
-10.times do |n|
-  name = "lessons-#{n+1}"
-  topics.each { |topic| topic.lessons.create!(name: name) }
+  name = "lesson-#{n+1}"
+  users.each {|user| user.lessons.create!(name: name)}
 end
 
 lessons = Lesson.order(:created_at).take 10

@@ -1,7 +1,7 @@
 <% provide :title, t(".title", title: @lesson.name) %>
 <h1><%= t ".title", title: @lesson.name %></h1>
 <%= "(#{pluralize @lesson.lesson_words.count, t(".term_text")})" %><br>
-<strong><%= "#{t(".creator")}: #{@lesson.topic.creator.name}" %></strong>
+<strong><%= "#{t(".creator")}: #{@lesson.user.name}" %></strong>
 
 <div class="manage_options">
   <%= link_to t(".edit"), edit_lesson_path(@lesson) %> |

@@ -22,6 +22,6 @@ class PagesController < ApplicationController
 
   def load_lessons
     @lessons = Lesson.all
-    @list_lessons = Lesson.includes(topic: :creator).recent.take 15
+    @list_lessons = Lesson.recent.take 15
   end
 end

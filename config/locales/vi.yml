@@ -28,15 +28,22 @@ vi:
         minium_char: "kí tự tối thiểu"
     registrations:
       new:
+        name: "Tên"
         sign_up: "Đăng kí"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
         minium_char: "kí tự tối thiểu"
+        gender: "Giới tính"
+      user:
+        signed_up_but_unconfirmed: "Đường dẫn kích hoạt tài khoản đã được gửi đến email của bạn. Hãy bấm vào đường dẫn để kích hoạt tài khoản."
     sessions:
       new:
         log_in: "Đăng nhập"
         password: "Mật khẩu"
         remember: "Nhớ mật khẩu"
+      user:
+        signed_in: "Đăng nhập thành công."
+        signed_out: "Đăng xuất thành công."
     shared:
       links:
         log_in: "Đăng nhập"
@@ -54,7 +61,7 @@ vi:
       lesson_not_found: "Không tìm thấy bài học"
   lessons:
     index:
-      title: "Các bài học của người dùng"
+      title: "Các bài học của %{user}"
     new:
       title: "Tạo một bài học mới"
       submit: "Tạo"
@@ -114,11 +121,15 @@ vi:
     application:
       fulltitle: "Framazing Quiz"
     header:
+      create_lesson: "Tạo học phần"
       signup: "Đăng kí"
       login: "Đăng nhập"
+      account: "Tài khoản"
+      my_lessons: "Các học phần của tôi"
+      logout: "Đăng xuất"
   pages:
     home:
       intro1: "Công cụ đơn giản để học mọi thứ."
       intro2: "Tìm kiếm các bài học hoặc tự tạo cho chính mình. Cải thiện điểm số bằng cách học thẻ ghi nhớ, kiểm tra và nhiều hơn nữa."
-      countset: "Các bài học"
+      countset: "Bài học"
       get_started: "Bắt đầu nào!"

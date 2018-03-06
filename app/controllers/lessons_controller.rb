@@ -5,8 +5,8 @@ class LessonsController < ApplicationController
   before_action :correct_creator, only: %i(edit update destroy)
 
   def index
-    title = t ".title"
     user = User.find_by id: params[:id]
+    title = t(".title", user: user.name)
 
     if user
       lessons = user.lessons.paginate page: params[:page]
@@ -28,7 +28,7 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @lesson = Topic.first.lessons.build lesson_params
+    @lesson = current_user.lessons.new lesson_params
 
     if lesson.save
       redirect_with_flash :success, t("message.success.lesson_created"), lesson
@@ -50,7 +50,7 @@ class LessonsController < ApplicationController
   def destroy
     lesson.destroy
     redirect_with_flash :success, t("message.success.lesson_deleted"),
-      lessons_user_url(User.first)
+      lessons_user_url(current_user)
   end
 
   private
