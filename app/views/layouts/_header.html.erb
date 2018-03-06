@@ -10,28 +10,44 @@
       </button>
     </div>
     <div id="navbar1" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <%= link_to t(".framazingquiz"), root_path, class: "logo navbar-b" %>
-      </ul>
+      <div class="nav navbar-nav navbar-left">
+        <li><%= link_to t(".framazingquiz"), root_path, class: "logo navbar-b" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to t(".create_lesson"), new_lesson_path %></li>
+        <% end %>
+      </div>
+
       <nav>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right flex-box align-items-center">
+          <li class="navbar-form">
+            <%= search_form_for searched_users do |f| %>
+              <div class="form-group">
+                <%= f.text_field :name_cont, class: "form-control", placeholder:
+                  t(".search") %>
+              </div>
+              <%= f.submit t(".submit"), class: "btn btn-default" %>
+            <% end %>
+          </li>
+
           <% if user_signed_in? %>
-            <li><%= link_to t(".create_lesson"), new_lesson_path %></li>
             <li class="dropdown">
-              <%= link_to "#", class: "dropdown-toggle blue", data: {toggle: "dropdown"} do %>
+              <%= link_to "#", class: "dropdown-toggle blue", data:
+                {toggle: "dropdown"} do %>
                 <%= t ".account" %>
                 <b class="caret"></b>
               <% end %>
 
               <ul class="dropdown-menu blue">
-                <li><%= link_to t(".my_lessons"), lessons_user_path(current_user) %></li>
+                <li><%= link_to t(".my_lessons"),
+                  lessons_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li><%= link_to t(".logout"), destroy_user_session_path,
                   method: :delete, class: "logout" %></li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to t(".login"), new_user_session_path, class: "login" %></li>
+            <li><%= link_to t(".login"), new_user_session_path,
+              class: "login" %></li>
             <li><%= link_to t(".signup"), new_user_registration_path,
               class: "signup" %></li>
           <% end %>

@@ -1,0 +1,12 @@
+<%= render "shared/search", users: @searched_users, lessons: @searched_lessons,
+   search_value: @search_support.value %>
+
+<ul class="display-index">
+  <%= render partial: "users/user", collection: @users %>
+</ul>
+
+<div class="row">
+  <div class="col-md-9">
+    <%= will_paginate @users %>
+  </div>
+</div>

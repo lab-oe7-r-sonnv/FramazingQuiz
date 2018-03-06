@@ -50,6 +50,11 @@ en:
         forgot_password?: "Forgot password?"
         didnt_receive_confirm?: "Didn't recieve password confimation?"
         sign_in_with: "Sign in with"
+  shared:
+    search:
+      result_matched: "Result matched"
+      users: "Users"
+      lessons: "Lessons"
   message:
     success:
       lesson_created: "Lesson created"
@@ -68,6 +73,8 @@ en:
     edit:
       title: "Edit lesson"
       submit: "Update"
+    lessons_info:
+      words: "words"
     lesson_word:
       remove: "remove"
     show:
@@ -127,6 +134,8 @@ en:
       account: "Account"
       my_lessons: "My lessons"
       logout: "Logout"
+      submit: "Submit"
+      search: "Search"
   pages:
     home:
       intro1: "Simple tools for learning anything."

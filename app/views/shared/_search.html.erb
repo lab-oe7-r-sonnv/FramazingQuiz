@@ -1,0 +1,19 @@
+<% provide :title, t(".result_matched") %>
+
+<div class="row">
+  <div class="col-md-8">
+    <h1><%= t ".result_matched" %></h1>
+  </div>
+
+  <div class="col-md-2 flex-box">
+    <%= search_form_for users do |f| %>
+      <%= f.hidden_field :name_cont, value: search_value %>
+      <%= f.submit t(".users"), class: "btn btn-default" %>
+    <% end %>
+
+    <%= search_form_for lessons, url: lessons_user_path(current_user_id) do |f| %>
+      <%= f.hidden_field :name_cont, value: search_value %>
+      <%= f.submit t(".lessons"), class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>

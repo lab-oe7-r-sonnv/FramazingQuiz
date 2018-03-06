@@ -83,7 +83,6 @@ $res-1200: 'only screen and (min-width: 1200px)';
 
 // scss-lint:disable ImportantRule
 .navbar-nav {
-  line-height: 50px;
   margin: 5px;
 
   li > a {
@@ -150,6 +149,10 @@ textarea {
   resize: vertical;
 }
 
+.display-block {
+  display: block;
+}
+
 .center {
   background: image-url('img_background.png');
   text-align: center;
@@ -157,6 +160,10 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.align-items-center {
+  align-items: center;
 }
 
 .bar {
@@ -215,8 +222,11 @@ textarea {
 }
 
 .hover-bottom {
+  border-bottom: 2px solid transparent;
+  transition: all .5s;
+
   &:hover {
-    border-bottom: 2px solid $gray;
+    border-bottom-color: $lightgray;
   }
 }
 
@@ -340,6 +350,10 @@ hr {
   margin-bottom: 20px;
 }
 
+.mr-10 {
+  margin-right: 10px;
+}
+
 .px-10 {
   padding-bottom: 10px;
   padding-top: 10px;
@@ -360,6 +374,12 @@ hr {
 
 .no-margin {
   margin: 0;
+}
+
+.display-index {
+  li {
+    list-style: none;
+  }
 }
 
 .border-right {
@@ -506,6 +526,10 @@ h2 {
   display: flex;
   flex-direction: column;
   padding: 20px 60px;
+}
+
+.flex-box {
+  display: flex;
 }
 
 .soft-red {

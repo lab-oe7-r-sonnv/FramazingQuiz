@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery with: :exception
-  before_action :set_locale
+  before_action :set_locale, :set_searched_users, :set_searched_lessons
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from ActionController::RoutingError, with: :routes_error
@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do
     redirect_with_flash :danger, t("message.danger.access_denied"), root_url
   end
+
+  helper_method :current_user_id
 
   protected
 
@@ -49,5 +51,17 @@ class ApplicationController < ActionController::Base
 
   def remove_word words, word
     words.delete word
+  end
+
+  def set_searched_users
+    @searched_users = User.search params[:q]
+  end
+
+  def set_searched_lessons
+    @searched_lessons = Lesson.search params[:q]
+  end
+
+  def current_user_id
+    current_user ? current_user.id : Settings.users.temp_id
   end
 end

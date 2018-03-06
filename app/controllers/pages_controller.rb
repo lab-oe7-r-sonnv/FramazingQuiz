@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :load_lessons, only: [:home, :show]
+  before_action :load_lessons, only: %i(home show)
 
   def home; end
 

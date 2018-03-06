@@ -1,9 +1,10 @@
 class LessonsController < ApplicationController
-  attr_reader :lesson
+  attr_reader :lesson, :searched_lessons
 
   before_action :find_lesson, only: %i(show edit update destroy)
   before_action :correct_user, only: %i(edit update destroy)
   before_action :authorize_lesson, except: %i(index show)
+  before_action :search_lesson, only: %i(index)
 
   def index
     user = User.find_by id: params[:id]
@@ -55,6 +56,13 @@ class LessonsController < ApplicationController
   end
 
   private
+
+  def search_lesson
+    return unless params[:q]
+    @search_support = SearchSupports.new searched_lessons
+    @lessons = searched_lessons.result.paginate page: params[:page]
+    render :index
+  end
 
   def lesson_params
     params.require(:lesson).permit :id, :name, :picture, :blocked,

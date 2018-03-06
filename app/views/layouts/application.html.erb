@@ -6,7 +6,7 @@
     <%= render "layouts/shim" %>
   </head>
   <body>
-    <%= render "layouts/header" %>
+    <%= render "layouts/header", searched_users: @searched_users %>
     <div class="content-staticpage">
       <% flash.each do |message_type, message| %>
       <tr data-toggle="modal" data-target="modal-template" >

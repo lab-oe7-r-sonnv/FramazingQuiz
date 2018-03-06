@@ -51,6 +51,11 @@ vi:
         forgot_password?: "Quên mật khẩu?"
         didnt_receive_confirm?: "Không nhận được email đặt lại mật khẩu?"
         sign_in_with: "Đăng nhập bằng"
+  shared:
+    search:
+      result_matched: "Kết quả tìm kiếm"
+      users: "Người dùng"
+      lessons: "Học phần"
   message:
     success:
       lesson_created: "Bài học đã được tạo"
@@ -66,6 +71,8 @@ vi:
     new:
       title: "Tạo một bài học mới"
       submit: "Tạo"
+    lessons_info:
+      words: "từ"
     edit:
       title: "Chỉnh sửa bài học"
       submit: "Cập nhật"
@@ -128,6 +135,8 @@ vi:
       account: "Tài khoản"
       my_lessons: "Các học phần của tôi"
       logout: "Đăng xuất"
+      submit: "Tìm kiếm"
+      search: "Nhập thông tin..."
   pages:
     home:
       intro1: "Công cụ đơn giản để học mọi thứ."
