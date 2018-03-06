@@ -32,10 +32,12 @@ en:
         minium_char: "characters minimum"
     registrations:
       new:
+        name: "Name"
         sign_up: "Sign up"
         password: "Password"
         password_confirmation: "Password confirmation"
         minium_char: "character minium"
+        gender: "Gender"
     sessions:
       new:
         log_in: "Log in"
@@ -58,7 +60,7 @@ en:
       lesson_not_found: "Lesson not found"
   lessons:
     index:
-      title: "User's lessons"
+      title: "%{user}'s lessons"
     new:
       title: "Create a new lesson"
       submit: "Create"
@@ -118,8 +120,12 @@ en:
     application:
       fulltitle: "Framazing Quiz"
     header:
+      create_lesson: "Create lesson"
       signup: "Signup"
       login: "Login"
+      account: "Account"
+      my_lessons: "My lessons"
+      logout: "Logout"
   pages:
     home:
       intro1: "Simple tools for learning anything."

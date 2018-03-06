@@ -6,18 +6,22 @@
       <%= devise_error_messages! %>
 
       <div class="field">
+        <%= f.label :name, t(".name") %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email",
-          class: "form-control" %>
+        <%= f.email_field :email, class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :password, t(".password") %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> <%= t ".minium_char" %>)</em>
+        <% end %>
         <%= link_to t("devise.shared.links.didnt_receive_confirm?"),
           new_confirmation_path(resource_name) %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> <%= t ".minium_char" %>)</em>
-        <% end %><br />
         <%= f.password_field :password, autocomplete: "off",
           class: "form-control" %>
       </div>

@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :confirmable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+    :confirmable, :validatable
 
-  has_many :topics, dependent: :destroy, foreign_key: :creator_id,
-    inverse_of: :creator
-  has_many :lessons, through: :topics
+  has_many :lessons, dependent: :destroy
 
   enum sex: %i(male female)
   enum type: {Student: "Student", Teacher: "Teacher", Admin: "Admin"}
+
+  validates :name, presence: true
 end

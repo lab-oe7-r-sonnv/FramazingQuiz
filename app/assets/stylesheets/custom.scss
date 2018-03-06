@@ -86,23 +86,21 @@ $res-1200: 'only screen and (min-width: 1200px)';
   line-height: 50px;
   margin: 5px;
 
-  li {
+  li > a {
+    color: $white !important;
+    font-size: 20px;
+    margin-left: 5px;
+    padding-top: 10;
 
-    a {
-      color: $white !important;
-      font-size: 20px;
-      height: 50px;
-      margin-left: 5px;
-      padding-top: 10;
-    }
-
-    &:hover,
-    &:focus {
-      background: $lightblue;
-      opacity: .8;
-      transition: opacity .5s ease-out;
+    &:focus,
+    &:hover {
+      background-color: $lightblue !important;
     }
   }
+}
+
+.blue {
+  background-color: $layoutcol !important;
 }
 
 // scss-lint:enable ImportantRule
