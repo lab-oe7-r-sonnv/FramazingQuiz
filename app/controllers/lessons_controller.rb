@@ -1,7 +1,8 @@
 class LessonsController < ApplicationController
-  attr_reader :lesson, :searched_lessons
+  attr_reader :lesson, :searched_lessons, :search_support
 
   before_action :find_lesson, only: %i(show edit update destroy)
+  before_action :authenticate_user!, except: %i(index show)
   before_action :correct_user, only: %i(edit update destroy)
   before_action :authorize_lesson, except: %i(index show)
   before_action :search_lesson, only: %i(index)
@@ -58,8 +59,8 @@ class LessonsController < ApplicationController
   private
 
   def search_lesson
-    return unless params[:q]
     @search_support = SearchSupports.new searched_lessons
+    redirect_to root_path if search_support.search_value_empty?
     @lessons = searched_lessons.result.paginate page: params[:page]
     render :index
   end

@@ -129,6 +129,7 @@ vi:
     application:
       fulltitle: "Framazing Quiz"
     header:
+      admin: "Admin"
       create_lesson: "Tạo học phần"
       signup: "Đăng kí"
       login: "Đăng nhập"

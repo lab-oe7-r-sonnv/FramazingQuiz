@@ -16,6 +16,12 @@ $bisque: #ffe4c4;
 $salmon: #fa8072;
 $aliceblue: #f0f8ff;
 $darkseagreen: #8fbc8f;
+$notice-background-color: #dff0d8;
+$notice-border-color: #d6e9c6;
+$notice-color: #3c763d;
+$alert-background-color: #f2dede;
+$alert-border-color: #ebccd1;
+$alert-color: #a94442;
 
 // responsive variable
 
@@ -172,6 +178,18 @@ textarea {
 
 .small-padding {
   padding: 4px;
+}
+
+.alert-notice {
+  background-color: $notice-background-color;
+  border-color: $notice-border-color;
+  color: $notice-color;
+}
+
+.alert-alert {
+  background-color: $alert-background-color;
+  border-color: $alert-border-color;
+  color: $alert-color;
 }
 
 .introdue {

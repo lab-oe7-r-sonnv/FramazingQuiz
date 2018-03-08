@@ -38,11 +38,18 @@
               <% end %>
 
               <ul class="dropdown-menu blue">
-                <li><%= link_to t(".my_lessons"),
-                  lessons_user_path(current_user) %></li>
+                <% if current_user.Admin? %>
+                  <li><%= link_to t(".admin"), rails_admin.dashboard_path %></li>
+                <% end %>
+
+                <li>
+                  <%= link_to t(".my_lessons"), lessons_user_path(current_user) %>
+                </li>
                 <li class="divider"></li>
-                <li><%= link_to t(".logout"), destroy_user_session_path,
-                  method: :delete, class: "logout" %></li>
+                <li>
+                  <%= link_to t(".logout"), destroy_user_session_path,
+                    method: :delete, class: "logout" %>
+                </li>
               </ul>
             </li>
           <% else %>
