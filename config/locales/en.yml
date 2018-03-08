@@ -56,6 +56,7 @@ en:
       lesson_updated: "Lesson has been updated"
       lesson_deleted: "Lesson deleted"
     danger:
+      access_denied: "You don't have permission to access this content!"
       user_not_found: "User not found"
       lesson_not_found: "Lesson not found"
   lessons:

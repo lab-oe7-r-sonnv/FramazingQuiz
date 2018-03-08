@@ -57,6 +57,7 @@ vi:
       lesson_updated: "Bài học đã được cập nhật"
       lesson_deleted: "Đã xóa bài học"
     danger:
+      access_denied: "Bạn không có quyền truy cập nội dung này!"
       user_not_found: "Không tìm thấy người dùng"
       lesson_not_found: "Không tìm thấy bài học"
   lessons:

@@ -2,7 +2,8 @@ class LessonsController < ApplicationController
   attr_reader :lesson
 
   before_action :find_lesson, only: %i(show edit update destroy)
-  before_action :correct_creator, only: %i(edit update destroy)
+  before_action :correct_user, only: %i(edit update destroy)
+  before_action :authorize_lesson, except: %i(index show)
 
   def index
     user = User.find_by id: params[:id]
@@ -40,7 +41,7 @@ class LessonsController < ApplicationController
   def edit; end
 
   def update
-    if lesson.update_attributes lesson_params
+    if lesson.update lesson_params
       redirect_with_flash :success, t("message.success.lesson_updated"), lesson
     else
       render :edit
@@ -66,9 +67,15 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find_by id: params[:id]
 
     return if lesson
-
     redirect_with_flash :danger, t("message.danger.lesson_not_found"), root_url
   end
 
-  def correct_creator; end
+  def correct_user
+    return if current_user.current_user? lesson.user
+    redirect_with_flash :danger, t("message.danger.access_denied"), root_url
+  end
+
+  def authorize_lesson
+    authorize! :manage, Lesson
+  end
 end

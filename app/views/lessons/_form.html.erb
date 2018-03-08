@@ -3,22 +3,16 @@
     <%= l.label :name, t(".lab_name") %>
     <%= l.text_field :name, class: "form-control" %>
   </div>
-  <table class="table">
-    <thead>
-    <tr>
-      <th><%= t ".word" %></th>
-      <th><%= t ".def" %></th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody class="fields">
-      <%= l.fields_for :lesson_words do |lw| %>
-        <%= render "lesson_word", f: lw, view_only: false %>
-      <% end %>
-    </tbody>
-  </table>
 
-  <div class="center">
+  <div class="fields">
+    <div class="col-md-5 px-20 lessons-edit-header mb-20"><%= t ".word" %></div>
+    <div class="col-md-5 px-20 lessons-edit-header mb-20"><%= t ".def" %></div>
+    <%= l.fields_for :lesson_words do |lw| %>
+      <%= render "lesson_word", f: lw, view_only: false %>
+    <% end %>
+  </div>
+
+  <div class="col-md-12 center px-20">
     <%= link_to_add_term l, l.object.lesson_words.build %>
 
     <%= l.submit yield(:button_text), class: "btn btn-primary" %>

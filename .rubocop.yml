@@ -486,7 +486,7 @@ Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
 # Align ends correctly.
-Lint/EndAlignment:
+Layout/EndAlignment:
   # The value `keyword` means that `end` should be aligned with the matching
   # keyword (if, while, etc.).
   # The value `variable` means that in assignments, `end` should be aligned
@@ -494,7 +494,7 @@ Lint/EndAlignment:
   # situations, `end` should still be aligned with the keyword.
   EnforcedStyleAlignWith: keyword
 
-Lint/DefEndAlignment:
+Layout/DefEndAlignment:
   # The value `def` means that `end` should be aligned with the def keyword.
   # The value `start_of_line` means that `end` should be aligned with method
   # calls like `private`, `public`, etc, if present in front of the `def`

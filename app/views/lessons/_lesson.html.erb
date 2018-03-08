@@ -1,3 +1,4 @@
-<li>
-  <%= link_to lesson.name, lesson %>
-</li>
+<%= link_to lesson, class: "no-text-decor" do %>
+  <li class="well well-sm lessons-index-item hover-bottom">
+    <%= lesson.name %></li>
+<% end %>

@@ -1,31 +1,42 @@
 <% provide :title, t(".title", title: @lesson.name) %>
-<h1><%= t ".title", title: @lesson.name %></h1>
-<%= "(#{pluralize @lesson.lesson_words.count, t(".term_text")})" %><br>
-<strong><%= "#{t(".creator")}: #{@lesson.user.name}" %></strong>
 
-<div class="manage_options">
-  <%= link_to t(".edit"), edit_lesson_path(@lesson) %> |
-  <%= link_to t(".delete"), @lesson, method: :delete, data: {confirm:
-    t(".confirm")} %>
-</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="lessons-header">
+      <%= "#{pluralize @lesson.lesson_words.count, t(".term_text")}" %> |
+      <strong><%= "#{t(".creator")}: #{@lesson.user.name}" %></strong>
+      <h1 class="lessons-title"><%= t ".title", title: @lesson.name %></h1>
 
-<div class="learning_options">
-  <%= link_to t(".flash_card"), new_flashcards_path(@lesson) %> |
-  <%= link_to t(".write"), new_writes_path(@lesson) %>
-</div>
-
-<%= form_for @lesson do |l| %>
-  <table class="table">
-    <thead>
-    <tr>
-      <th><%= t ".word" %></th>
-      <th><%= t ".def" %></th>
-    </tr>
-    </thead>
-    <tbody class="fields">
-      <%= l.fields_for :lesson_words do |lw| %>
-        <%= render "lesson_word", f: lw, view_only: true %>
+      <% if can?(:update, Lesson) && current_user.current_user?(@lesson.user) %>
+        <div class="manage_options">
+          <%= link_to t(".edit"), edit_lesson_path(@lesson),
+            class: "btn btn-default" %>
+          <%= link_to t(".delete"), @lesson, method: :delete, data: {confirm:
+            t(".confirm")}, class: "btn btn-default" %>
+        </div><br>
       <% end %>
-    </tbody>
-  </table>
-<% end %>
+
+      <div class="learning_options">
+        <%= link_to t(".flash_card"), new_flashcards_path(@lesson),
+          class: "btn btn-lg btn-primary" %>
+        <%= link_to t(".write"), new_writes_path(@lesson),
+          class: "btn btn-lg btn-primary" %>
+      </div>
+    </div>
+
+    <div class="lessons-words">
+      <%= form_for @lesson do |l| %>
+        <div class="col-md-6 px-20 lessons-edit-header mb-20">
+          <%= t ".word" %>
+        </div>
+        <div class="col-md-6 px-20 lessons-edit-header mb-20">
+          <%= t ".def" %>
+        </div><hr />
+
+        <%= l.fields_for :lesson_words do |lw| %>
+          <%= render "lesson_word", f: lw, view_only: true %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
