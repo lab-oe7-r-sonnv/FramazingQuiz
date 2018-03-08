@@ -1,0 +1,12 @@
+<% lessons.each do |lesson| %>
+  <div class="row">
+    <div class="col-md-9">
+      <li class="well well-lg lessons-index-item hover-bottom">
+        <div>
+          <%= lesson.words.count %> <%= t(".words") %> | <%= lesson.user.name %>
+        </div>
+        <%= link_to lesson.name, lesson, class: "no-text-decor" %>
+      </li>
+    </div>
+  </div>
+<% end %>

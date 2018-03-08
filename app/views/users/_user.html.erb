@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-9">
+    <li class="well well-lg lessons-index-item hover-bottom">
+      <div><%= user.lessons.count %> <%= t(".lessons") %></div>
+      <%= link_to user.name, lessons_user_path(user.id) %>
+    </li>
+  </div>
+</div>
