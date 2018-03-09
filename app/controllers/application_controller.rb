@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::RoutingError, with: :routes_error
 
   rescue_from CanCan::AccessDenied do
-    redirect_with_flash :danger, t("message.danger.access_denied"), root_url
+    redirect_with_flash(:danger, t("message.danger.access_denied"),
+      main_app.root_url)
   end
 
   helper_method :current_user_id

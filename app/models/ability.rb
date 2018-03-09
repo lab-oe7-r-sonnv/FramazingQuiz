@@ -10,6 +10,8 @@ class Ability
     return unless user
 
     if user.Admin?
+      can :access, :rails_admin
+      can :dashboard
       can :manage, :all
     else
       can :manage, Lesson
