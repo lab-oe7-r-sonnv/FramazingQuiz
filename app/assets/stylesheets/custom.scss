@@ -129,6 +129,10 @@ $res-1200: 'only screen and (min-width: 1200px)';
   }
 }
 
+.unread-noti {
+  background-color: $lightgray;
+}
+
 // end header
 
 // body
@@ -240,11 +244,11 @@ textarea {
 }
 
 .hover-bottom {
-  border-bottom: 2px solid transparent;
+  border-bottom: 4px solid transparent;
   transition: all .5s;
 
   &:hover {
-    border-bottom-color: $lightgray;
+    border-bottom-color: $lightyellow;
   }
 }
 
@@ -416,6 +420,10 @@ hr {
   &:hover {
     background-color: $yellow;
   }
+}
+
+.notification-list {
+  width: 350px;
 }
 
 h1,

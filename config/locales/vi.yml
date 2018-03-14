@@ -91,6 +91,8 @@ vi:
       def: "Định nghĩa"
       delete: "Xóa"
       confirm: "Bạn có chắc chắn không?"
+      bookmark_event: "ghi nhớ"
+      bookmark_this: "Ghi nhớ bài học này"
     form:
       lab_name: "Tên bài học"
       word: "Từ"
@@ -122,6 +124,17 @@ vi:
       name: "Đúng"
     incorrect:
       name: "Sai"
+  notifications:
+    create:
+      bookmarked: "Đã thêm vào danh sách nhớ học phần"
+    index:
+      notifications: "Thông báo"
+    notification:
+      noti_msg_html: <b>%{name}</b> đã %{event} %{asset} của bạn lúc <i>%{time}</i>
+    notification_feed:
+      see_more: "Xem thêm"
+      mark_as_read: "đã đọc"
+      mark_as_read_all: "đánh dấu tất cả đã đọc"
   layouts:
     footer:
       en: "Tiếng Anh"

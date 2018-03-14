@@ -3,6 +3,8 @@ class User < ApplicationRecord
     :confirmable, :validatable
 
   has_many :lessons, dependent: :destroy
+  has_many :notifications, foreign_key: :user_id,
+    inverse_of: :user, dependent: :destroy
 
   enum sex: %i(male female)
   enum type: {Student: "Student", Teacher: "Teacher", Admin: "Admin"}

@@ -90,6 +90,8 @@ en:
       def: "Definition"
       delete: "Delete"
       confirm: "You sure?"
+      bookmark_event: "bookmarked"
+      bookmark_this: "Bookmark this lesson"
     form:
       lab_name: "Title"
       word: "Word"
@@ -121,6 +123,17 @@ en:
       name: "Correct"
     incorrect:
       name: "Incorrect"
+  notifications:
+    create:
+      bookmarked: "Added to your bookmark lessons list"
+    index:
+      notifications: "Notifications"
+    notification:
+      noti_msg_html: <b>%{name}</b> has %{event} your %{asset} at <i>%{time}</i>
+    notification_feed:
+      see_more: "See more"
+      mark_as_read: "mark as read"
+      mark_as_read_all: "mark as read all"
   layouts:
     footer:
       en: "English"

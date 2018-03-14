@@ -1,0 +1,16 @@
+<% if notifications.any? %>
+  <% notifications.each do |notification| %>
+    <div>
+      <li class="well-sm no-margin hover-bottom">
+        <%= render "notifications/notification", notification: notification %>
+        <%= link_to t(".mark_as_read"), "#", class: "read_marker" %>
+      </li>
+    </div>
+    <% if notification != notifications.last %>
+      <hr class="no-margin"/>
+    <% else %>
+      <%= link_to t(".see_more"), notifications_user_path(current_user) %>
+      <%= link_to t(".mark_as_read_all"), "#", id: "read_marker_all" %>
+    <% end %>
+  <% end %>
+<% end %>

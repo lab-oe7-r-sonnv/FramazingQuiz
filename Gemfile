@@ -25,6 +25,7 @@ gem "config"
 gem "cancancan"
 gem "ransack"
 gem "rails_admin"
+gem "redis"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
