@@ -93,6 +93,7 @@ vi:
       confirm: "Bạn có chắc chắn không?"
       bookmark_event: "ghi nhớ"
       bookmark_this: "Ghi nhớ bài học này"
+      unbookmark_this: "Bỏ ghi nhớ bài học này"
     form:
       lab_name: "Tên bài học"
       word: "Từ"
@@ -125,8 +126,6 @@ vi:
     incorrect:
       name: "Sai"
   notifications:
-    create:
-      bookmarked: "Đã thêm vào danh sách nhớ học phần"
     index:
       notifications: "Thông báo"
     notification:
@@ -135,6 +134,21 @@ vi:
       see_more: "Xem thêm"
       mark_as_read: "đã đọc"
       mark_as_read_all: "đánh dấu tất cả đã đọc"
+  bookmarked_lessons:
+    index:
+      title: "Các học phần đã đánh dấu của %{user}"
+      no_bookmarked_lessons: "Bạn chưa ghi nhớ bài học nào!"
+    create:
+      bookmarked: "Đã thêm vào danh sách nhớ học phần"
+    destroy:
+      unbookmarked: "Đã bỏ ghi nhớ bài học này"
+    lesson:
+      bookmark_from: "Đánh dấu từ"
+  users:
+    show_lessons:
+      my_lessons: "Học phần của tôi"
+      my_bookmarked_lessons: "Các học phần đã đánh dấu"
+      no_lessons: "Bạn chưa có học phần nào!"
   layouts:
     footer:
       en: "Tiếng Anh"

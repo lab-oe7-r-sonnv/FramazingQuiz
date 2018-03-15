@@ -1,4 +1,5 @@
 <% provide :title, title %>
+
 <div class="row">
   <div class="col-md-3">
     <div class="panel panel-primary">
@@ -6,15 +7,15 @@
 
       <div class="panel-body">
         <ul class="lessons no-padding no-margin">
-          <%= link_to lessons_user_path(user), class: "no-text-decor" do %>
+          <%= link_to lessons_user_path(@user), class: "no-text-decor" do %>
             <li class="well well-sm lessons-index-item hover-bottom">
-              <%= t(".my_lessons") %></li>
+              <%= t("users.show_lessons.my_lessons") %></li>
           <% end %>
 
-          <%= link_to bookmarked_lessons_user_path(user),
+          <%= link_to bookmarked_lessons_user_path(@user),
             class: "no-text-decor" do %>
             <li class="well well-sm lessons-index-item hover-bottom">
-              <%= t(".my_bookmarked_lessons") %></li>
+              <%= t("users.show_lessons.my_bookmarked_lessons") %></li>
           <% end %>
         </ul>
       </div>
@@ -23,16 +24,17 @@
 
   <div class="col-md-9">
     <div class="panel panel-primary">
-      <div class="panel-heading"><%= t ".my_lessons" %></div>
+      <div class="panel-heading"><%= t "users.show_lessons.my_lessons" %></div>
 
       <div class="panel-body">
-        <% if lessons.any? %>
+        <% if @bookmarked_lessons.any? %>
           <ul class="lessons no-padding no-margin">
-            <%= render partial: "lessons/lesson", collection: lessons %>
-          </ul>
-          <%= will_paginate lessons %>
+            <%= render partial: "bookmarked_lessons/lesson",
+            collection: @bookmarked_lessons %></ul>
+
+          <%= will_paginate @bookmarked_lessons %>
         <% else %>
-          <h3 class="center"><%= t ".no_lessons" %></h3>
+          <h3 class="center"><%= t ".no_bookmarked_lessons" %></h3>
         <% end %>
       </div>
     </div>

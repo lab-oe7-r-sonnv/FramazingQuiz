@@ -3,22 +3,33 @@
 <div class="row">
   <div class="col-md-8">
     <div class="lessons-header">
-      <% if can?(:manage, Notification) && !current_user.current_user?(@lesson.user) %>
-        <%= form_for :notification, url: notifications_path, remote: true,
-          method: :post do |f| %>
-          <%= f.hidden_field :event, value: t(".bookmark_event") %>
-          <%= f.hidden_field :user_id, value: @lesson.user.id %>
-          <%= f.hidden_field :bookmarker_id, value: current_user.id %>
-          <%= f.hidden_field :lesson_id, value: @lesson.id %>
-          <%= f.submit t(".bookmark_this"), class: "btn btn-default" %>
+      <% if can?(:manage, Notification) %>
+        <% if @lesson.bookmarker == current_user %>
+          <%= form_for :bookmarked_lessons, url: bookmarked_lessons_path,
+            method: :delete do |f| %>
+            <%= f.submit t(".unbookmark_this"), class: "btn btn-danger" %>
+          <% end %>
+        <% else %>
+          <%= form_for :notification, url: bookmarked_lessons_path,
+            method: :post do |f| %>
+            <%= f.hidden_field :event, value: t(".bookmark_event") %>
+            <%= f.hidden_field :user_id, value: @lesson.user.id %>
+            <%= f.hidden_field :notifier_id, value: current_user.id %>
+            <%= f.hidden_field :lesson_id, value: @lesson.id %>
+            <%= f.submit t(".bookmark_this"), class: "btn btn-default" %>
+          <% end %>
         <% end %>
       <% end %>
 
       <%= "#{pluralize @lesson.lesson_words.count, t(".term_text")}" %> |
-      <strong><%= "#{t(".creator")}: #{@lesson.user.name}" %></strong>
+      <strong>
+        <%= "#{t(".creator")}: " %>
+        <%= link_to @lesson.user.name, lessons_user_path(@lesson.user),
+          class: "no-text-decor" %>
+      </strong>
       <h1 class="lessons-title"><%= t ".title", title: @lesson.name %></h1>
 
-      <% if can?(:update, Lesson) && current_user.current_user?(@lesson.user) %>
+      <% if can?(:update, Lesson) && (current_user == @lesson.user) %>
         <div class="manage_options">
           <%= link_to t(".edit"), edit_lesson_path(@lesson),
             class: "btn btn-default" %>

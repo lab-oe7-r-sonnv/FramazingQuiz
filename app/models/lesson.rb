@@ -1,6 +1,9 @@
 class Lesson < ApplicationRecord
   attr_reader :correct_words_ids, :incorrect_words_ids, :is_correct
+
   belongs_to :user
+  belongs_to :bookmarker, optional: true,
+    inverse_of: :bookmarked_lessons, class_name: User.name
 
   has_many :lesson_words, dependent: :destroy
   has_many :words, through: :lesson_words

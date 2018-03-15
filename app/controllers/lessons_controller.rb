@@ -73,15 +73,8 @@ class LessonsController < ApplicationController
       definitions_attributes: [:id, :text, :correct]]]
   end
 
-  def find_lesson
-    @lesson = Lesson.find_by id: params[:id]
-
-    return if lesson
-    redirect_with_flash :danger, t("message.danger.lesson_not_found"), root_url
-  end
-
   def correct_user
-    return if current_user.current_user? lesson.user
+    return if current_user.lessons.find_by id: params[:id]
     redirect_with_flash :danger, t("message.danger.access_denied"), root_url
   end
 

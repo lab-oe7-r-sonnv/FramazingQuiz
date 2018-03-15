@@ -3,14 +3,16 @@
     <div>
       <li class="well-sm no-margin hover-bottom">
         <%= render "notifications/notification", notification: notification %>
-        <%= link_to t(".mark_as_read"), "#", class: "read_marker" %>
+        <%= link_to t(".mark_as_read"), "#", class: "read-marker normal-link" %>
       </li>
     </div>
     <% if notification != notifications.last %>
       <hr class="no-margin"/>
     <% else %>
-      <%= link_to t(".see_more"), notifications_user_path(current_user) %>
-      <%= link_to t(".mark_as_read_all"), "#", id: "read_marker_all" %>
+      <%= link_to t(".see_more"), notifications_user_path(current_user),
+        class: "well-sm" %>
+      <%= link_to t(".mark_as_read_all"), "#", id: "read_marker_all",
+        class: "well-sm ml-90" %>
     <% end %>
   <% end %>
 <% end %>

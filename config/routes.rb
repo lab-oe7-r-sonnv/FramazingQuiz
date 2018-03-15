@@ -7,16 +7,18 @@ Rails.application.routes.draw do
       member do
         get :lessons, to: "lessons#index"
         get :notifications, to: "notifications#index"
+        get :bookmarked_lessons, to: "bookmarked_lessons#index"
       end
     end
     resources :lessons, except: :index do
       member do
+        resource :notifications, only: :create
+        resource :bookmarked_lessons, only: %i(create destroy)
         resource :flashcards, only: :new
         resource :writes, only: %i(new update)
       end
     end
     resources :pages, only: :show
-    resources :notifications, only: :create
     root "pages#home", page: "home"
     get "*pages", to: "errors#routing"
   end

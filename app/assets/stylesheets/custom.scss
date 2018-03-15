@@ -4,8 +4,10 @@
 $white: #fff;
 $layoutcol: #03f;
 $lightblue: #39f;
+$link-color: #337ab7;
 $black: #000;
 $yellow: #f90;
+$red: #d9534f;
 $gray: #999;
 $darkblue: #006;
 $lightyellow: #fc0;
@@ -89,18 +91,19 @@ $res-1200: 'only screen and (min-width: 1200px)';
 
 // scss-lint:disable ImportantRule
 .navbar-nav {
-  margin: 5px;
 
-  li > a {
+  .header-link {
     color: $white !important;
     font-size: 20px;
-    margin-left: 5px;
-    padding-top: 10;
 
     &:focus,
     &:hover {
       background-color: $lightblue !important;
     }
+  }
+
+  .header-dropdown {
+    font-size: 20px;
   }
 }
 
@@ -132,6 +135,40 @@ $res-1200: 'only screen and (min-width: 1200px)';
 .unread-noti {
   background-color: $lightgray;
 }
+
+.bell {
+  height: 31px;
+  width: 55px;
+
+  &:hover {
+    background: image-url('active-bell.png');
+    background-repeat: no-repeat;
+  }
+}
+
+.inactive-bell {
+  background: image-url('inactive-bell.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.active-bell {
+  background: image-url('active-bell.png');
+  background-repeat: no-repeat;
+}
+
+.read-marker {
+  text-align: right;
+}
+
+// scss-lint:disable ImportantRule
+
+.normal-link {
+  color: $link-color !important;
+  font-size: 14px;
+}
+
+// scss-lint:enable ImportantRule
 
 // end header
 
@@ -368,12 +405,21 @@ hr {
   margin-bottom: 5px;
 }
 
+.my-5 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 .mb-20 {
   margin-bottom: 20px;
 }
 
 .mr-10 {
   margin-right: 10px;
+}
+
+.ml-90 {
+  margin-left: 90px;
 }
 
 .px-10 {
@@ -394,9 +440,17 @@ hr {
   padding: 0;
 }
 
-.no-margin {
-  margin: 0;
+.h-40 {
+  height: 40px;
 }
+
+// scss-lint:disable ImportantRule
+
+.no-margin {
+  margin: 0 !important;
+}
+
+// scss-lint:enable ImportantRule
 
 .display-index {
   li {
@@ -564,6 +618,10 @@ h2 {
 
 .red {
   background-color: $salmon;
+}
+
+.bgc-red {
+  background-color: $red;
 }
 
 .soft-green {

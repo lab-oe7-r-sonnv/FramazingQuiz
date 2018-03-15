@@ -12,13 +12,13 @@ $(document).on('turbolinks:load', function () {
       // prepend new noti to top of the notifications list
       $('#noti_list').prepend(
         '<div>' +
-          '<li class= "well-sm no-margin hover-bottom unread-noti">' +
-            '<b>' + data.bookmarker +
-            '</b> has ' + data.event +
-            ' your ' + data.lesson +
-            ' at <i>' + data.created_at + '</i>' +
-            '<a class="read_marker" href = "#" > mark as read</a>' +
-          '</li>' +
+        '<li class= "well-sm no-margin hover-bottom unread-noti">' +
+        '<b>' + data.bookmarker +
+        '</b> has ' + data.event +
+        ' your ' + data.lesson +
+        ' at <i>' + data.created_at + '</i>' +
+        '<a class="read-marker normal-link" href = "#" > mark as read</a>' +
+        '</li>' +
         '</div>' +
         '<hr class="no-margin"/>'
       );
@@ -31,8 +31,9 @@ $(document).on('turbolinks:load', function () {
   });
 
   // mark read a noti when click on "mark as read" link
-  $('#noti_list').on('click', '.read_marker', function (event) {
+  $('#noti_list').on('click', '.read-marker', function (event) {
     $(this).closest('li').removeClass('unread-noti');
+    $('#noti_dropdown').toggleClass('inactive-bell').toggleClass('active-bell');
     recountNoti();
     return event.preventDefault();
   });
@@ -40,14 +41,20 @@ $(document).on('turbolinks:load', function () {
   // mark read all noti when click on "mark as read all" link
   $('#read_marker_all').on('click', function (event) {
     $('.unread-noti').removeClass('unread-noti');
+    $('#noti_dropdown').toggleClass('inactive-bell').toggleClass('active-bell');
     recountNoti();
     return event.preventDefault();
+  });
+
+  $('#noti_dropdown').on('click', function () {
+    $(this).toggleClass('inactive-bell').toggleClass('active-bell');
   });
 
   // recount notifications
   function recountNoti() {
     var unread_noti = $('.unread-noti').length;
-    unread_noti = (unread_noti == 0) ? '' : '(' + unread_noti + ')';
-    $('#noti_counter').html(unread_noti);
+    unread_noti = (unread_noti == 0) ? '' : unread_noti;
+    $('#noti_counter').html('<span class="badge bgc-red">' +
+      unread_noti + '</span>');
   }
 });
