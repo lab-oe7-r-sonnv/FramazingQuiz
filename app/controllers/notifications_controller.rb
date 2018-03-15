@@ -20,6 +20,6 @@ class NotificationsController < ApplicationController
 
   def notification_params
     params.require(:notification).permit :event, :user_id,
-      :bookmarker_id, :lesson_id
+      :notifier_id, :lesson_id
   end
 end

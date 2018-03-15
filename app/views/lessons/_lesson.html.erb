@@ -1,4 +1,6 @@
 <%= link_to lesson, class: "no-text-decor" do %>
-  <li class="well well-sm lessons-index-item hover-bottom">
+  <li class="well well-lg lessons-index-item hover-bottom">
+    <%= "#{pluralize lesson.lesson_words.count,
+      t("lessons.show.term_text")}" %> |
     <%= lesson.name %></li>
 <% end %>

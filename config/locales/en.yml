@@ -92,6 +92,7 @@ en:
       confirm: "You sure?"
       bookmark_event: "bookmarked"
       bookmark_this: "Bookmark this lesson"
+      unbookmark_this: "Unbookmark this lesson"
     form:
       lab_name: "Title"
       word: "Word"
@@ -124,8 +125,6 @@ en:
     incorrect:
       name: "Incorrect"
   notifications:
-    create:
-      bookmarked: "Added to your bookmark lessons list"
     index:
       notifications: "Notifications"
     notification:
@@ -134,6 +133,21 @@ en:
       see_more: "See more"
       mark_as_read: "mark as read"
       mark_as_read_all: "mark as read all"
+  bookmarked_lessons:
+    index:
+      title: "%{user}'s bookmarked lessons"
+      no_bookmarked_lessons: "You don't have any bookmarked lessons yet!"
+    create:
+      bookmarked: "Added to your bookmark lessons list"
+    destroy:
+      unbookmarked: "Unbookmarked this lesson"
+    lesson:
+      bookmark_from: "Bookmark from"
+  users:
+    show_lessons:
+      my_lessons: "My lessons"
+      my_bookmarked_lessons: "My bookmarked lessons"
+      no_lessons: "You don't have any lessons yet!"
   layouts:
     footer:
       en: "English"
