@@ -1,0 +1,18 @@
+<h1><%= t ".notifications" %></h1>
+<% if @all_notifications.any? %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <ul class="display-index">
+        <% @all_notifications.each do |notification| %>
+          <li class="well well-lg lessons-index-item hover-bottom">
+            <%= render "notification", notification: notification %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="center">
+        <%= will_paginate @all_notifications %>
+      </div>
+    </div>
+  </div>
+<% end %>

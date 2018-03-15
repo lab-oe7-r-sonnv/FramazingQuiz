@@ -3,6 +3,17 @@
 <div class="row">
   <div class="col-md-8">
     <div class="lessons-header">
+      <% if can?(:manage, Notification) && !current_user.current_user?(@lesson.user) %>
+        <%= form_for :notification, url: notifications_path, remote: true,
+          method: :post do |f| %>
+          <%= f.hidden_field :event, value: t(".bookmark_event") %>
+          <%= f.hidden_field :user_id, value: @lesson.user.id %>
+          <%= f.hidden_field :bookmarker_id, value: current_user.id %>
+          <%= f.hidden_field :lesson_id, value: @lesson.id %>
+          <%= f.submit t(".bookmark_this"), class: "btn btn-default" %>
+        <% end %>
+      <% end %>
+
       <%= "#{pluralize @lesson.lesson_words.count, t(".term_text")}" %> |
       <strong><%= "#{t(".creator")}: #{@lesson.user.name}" %></strong>
       <h1 class="lessons-title"><%= t ".title", title: @lesson.name %></h1>
@@ -12,7 +23,7 @@
           <%= link_to t(".edit"), edit_lesson_path(@lesson),
             class: "btn btn-default" %>
           <%= link_to t(".delete"), @lesson, method: :delete, data: {confirm:
-            t(".confirm")}, class: "btn btn-default" %>
+            t(".confirm")}, class: "btn btn-danger" %>
         </div><br>
       <% end %>
 

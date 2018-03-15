@@ -20,7 +20,7 @@
       <nav>
         <ul class="nav navbar-nav navbar-right flex-box align-items-center">
           <li class="navbar-form">
-            <%= search_form_for searched_users do |f| %>
+            <%= search_form_for header[:searched_users] do |f| %>
               <div class="form-group">
                 <%= f.text_field :name_cont, class: "form-control", placeholder:
                   t(".search") %>
@@ -30,6 +30,19 @@
           </li>
 
           <% if user_signed_in? %>
+            <li class="dropdown">
+              <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"},
+                id: "noti_dropdown" do %>
+                <%= t ".notification" %>
+                <span id="noti_counter"></span>
+              <% end %>
+
+              <ul id="noti_list"
+                class="dropdown-menu notification-list">
+                <%= render "notifications/notification_feed",
+                  notifications: header[:notifications] %>
+              </ul>
+            </li>
             <li class="dropdown">
               <%= link_to "#", class: "dropdown-toggle blue", data:
                 {toggle: "dropdown"} do %>

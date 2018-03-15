@@ -25,15 +25,9 @@ RemoveEmptyHelpersCheck: { }
 RemoveTrailingWhitespaceCheck: { }
 RemoveUnusedMethodsInControllersCheck: {
   except_methods: [
-    LessonsController#index,
-    LessonsController#show,
-    LessonsController#new,
-    LessonsController#edit,
     LessonsController#create,
-    PagesController#show,
-    PagesController#home,
+    NotificationsController#create,
     ErrorsController#routing,
-    LessonsController#create
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
