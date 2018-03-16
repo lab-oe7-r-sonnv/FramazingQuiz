@@ -3,24 +3,24 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
-  App.bookmark = App.cable.subscriptions.create('BookmarkChannel', {
+  App.finish_writing = App.cable.subscriptions.create('FinishWritingChannel', {
     connected: function () { },
     received: function (data) {
-      return renderNoti(this.bookmarkNoti(data));
+      return renderNoti(this.finishWritingNoti(data));
     },
-    bookmarkNoti: function (data) {
-      var bookmarkNoti =
+    finishWritingNoti: function (data) {
+      var finishWritingNoti =
         '<div>' +
           '<li class= "well-sm no-margin hover-bottom unread-noti">' +
-            '<b>' + data.broadcaster +
-            '</b> has ' + data.event +
-            ' your ' + data.lesson +
-            ' at <i>' + data.created_at + '</i>' +
+            data.event + ' <b>' +
+            data.third_person + '</b> ' +
+            data.lesson + ' at <i>' +
+            data.created_at + '</i>' +
             '<a class="read-marker normal-link" href = "#" > mark as read</a>' +
           '</li>' +
         '</div>' +
         '<hr class="no-margin"/>';
-      return bookmarkNoti;
+      return finishWritingNoti;
     }
   });
 });

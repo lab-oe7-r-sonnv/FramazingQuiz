@@ -112,6 +112,8 @@ vi:
       title: "Viết"
     show:
       start_again: "Bắt đầu lại"
+    update:
+      event: "hoàn thành bài viết"
     write:
       your_answer: "Đáp án của bạn"
       answer: "Trả lời"
@@ -129,7 +131,8 @@ vi:
     index:
       notifications: "Thông báo"
     notification:
-      noti_msg_html: <b>%{name}</b> đã %{event} %{asset} của bạn lúc <i>%{time}</i>
+      bookmarked_noti: "<b>%{name}</b> đã %{event} %{asset} của bạn lúc <i>%{time}</i>"
+      finished_writing_noti: "Bạn đã %{event} %{asset} của <b>%{third_person}</b> lúc <i>%{time}</i>"
     notification_feed:
       see_more: "Xem thêm"
       mark_as_read: "đã đọc"
@@ -149,6 +152,9 @@ vi:
       my_lessons: "Học phần của tôi"
       my_bookmarked_lessons: "Các học phần đã đánh dấu"
       no_lessons: "Bạn chưa có học phần nào!"
+  write_mailer:
+    finish_writing: "Hoàn thành bài viết"
+    youve_finish_writing: "Chúc mừng %{user}! Bạn đã hoàn thành bài học một cách xuất sắc!"
   layouts:
     footer:
       en: "Tiếng Anh"

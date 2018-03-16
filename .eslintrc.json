@@ -5,7 +5,8 @@
   },
   "globals": {
     "window": true,
-    "App": true
+    "App": true,
+    "renderNoti": true
   },
 
   "extends": "eslint:recommended",

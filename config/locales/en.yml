@@ -111,6 +111,8 @@ en:
       title: "Write"
     show:
       start_again: "Start again"
+    update:
+      event: "finished_writing"
     write:
       your_answer: "Your answer"
       answer: "Answer"
@@ -128,7 +130,8 @@ en:
     index:
       notifications: "Notifications"
     notification:
-      noti_msg_html: <b>%{name}</b> has %{event} your %{asset} at <i>%{time}</i>
+      bookmarked_noti: "<b>%{name}</b> has %{event} your %{asset} at <i>%{time}</i>"
+      finished_writing_noti: "You've %{event} <b>%{third_person}'s</b> %{asset} at <i>%{time}</i>"
     notification_feed:
       see_more: "See more"
       mark_as_read: "mark as read"
@@ -148,6 +151,10 @@ en:
       my_lessons: "My lessons"
       my_bookmarked_lessons: "My bookmarked lessons"
       no_lessons: "You don't have any lessons yet!"
+  write_mailer:
+    finish_writing:
+      finish_writing: "You've finished writing!"
+      youve_finish_writing: "Congratulations %{user}! You've finished writing in a greate way!"
   layouts:
     footer:
       en: "English"
