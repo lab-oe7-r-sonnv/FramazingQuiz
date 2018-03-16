@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     end
     resources :lessons, except: :index do
       member do
-        resource :notifications, only: :create
         resource :bookmarked_lessons, only: %i(create destroy)
         resource :flashcards, only: :new
         resource :writes, only: %i(new update)

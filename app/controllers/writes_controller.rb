@@ -1,6 +1,6 @@
 class WritesController < ApplicationController
   attr_reader :lesson, :support, :words_size, :current_word, :remain_words,
-    :incorrect_words, :correct_words, :is_correct
+    :incorrect_words, :correct_words, :is_correct, :finish_writing_notification
 
   before_action :find_lesson, only: %i(new update)
   before_action :load_session, :check_answer, only: :update
@@ -15,6 +15,8 @@ class WritesController < ApplicationController
     return continue_writing unless finish_writing?
     reload_support
     render :show
+    WriteMailer.finish_writing(current_user).deliver_now
+    broadcast_notify
   end
 
   private
@@ -73,5 +75,16 @@ class WritesController < ApplicationController
 
   def lesson_info
     lesson.lesson_info
+  end
+
+  def broadcast_notify
+    current_user_id = current_user.id
+    now = Time.now.utc
+    @finish_writing_notification = Notification.new event: t(".event"),
+      lesson_id: lesson.id, user_id: current_user_id,
+      notifier_id: current_user_id,
+      created_at: now, updated_at: now
+    return unless finish_writing_notification.save
+    finish_writing_notification.broadcast :finish_writing
   end
 end

@@ -4,15 +4,18 @@ class Notification < ApplicationRecord
   belongs_to :lesson
 
   scope :desc, ->{order created_at: :desc}
+  scope :events, ->{select("event").distinct}
 
   validates :user, presence: true
   validates :notifier, presence: true
   validates :lesson, presence: true
 
-  def broadcast_bookmark
-    ActionCable.server.broadcast "bookmark_channel_#{user.id}",
-      event: event,
-      bookmarker: notifier.name,
+  def broadcast name
+    ActionCable.server.broadcast "#{name}_channel_#{user.id}",
+      event: event.tr("_", " "),
+      broadcaster: notifier.name,
+      streamer: user.name,
+      third_person: lesson.user.name,
       created_at: created_at.strftime("%Y/%m/%d %H:%M:%S"),
       lesson: lesson.name
   end

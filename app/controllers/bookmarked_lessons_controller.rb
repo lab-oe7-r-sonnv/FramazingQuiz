@@ -15,7 +15,7 @@ class BookmarkedLessonsController < ApplicationController
     @notification = Notification.new notification_params
 
     return unless notification.save
-    notification.broadcast_bookmark
+    notification.broadcast :bookmark
     redirect_with_flash :success, t(".bookmarked"), request.referer
   end
 
