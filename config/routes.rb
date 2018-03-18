@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get :lessons, to: "lessons#index"
         get :notifications, to: "notifications#index"
         get :bookmarked_lessons, to: "bookmarked_lessons#index"
+        resources :topics, param: :topic_id
       end
     end
     resources :lessons, except: :index do

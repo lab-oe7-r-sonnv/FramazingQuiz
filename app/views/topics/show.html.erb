@@ -1,0 +1,38 @@
+<% provide :title, @topic.name %>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <%= render "shared/user_assets", user: @user %>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><%= @topic.name %></div>
+
+      <div class="panel-body">
+        <div class="mx-15 mb-15">
+          <% if can?(:manage, Topic) && (current_user == @user) %>
+            <%= link_to t(".edit"), edit_topic_path(@user, @topic),
+              class: "btn btn-default" %>
+
+            <%= link_to t(".delete"), topic_path(@user, @topic), method: :delete,
+              data: {confirm: t(".sure")}, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+
+        <% if @topic.lessons.any? %>
+          <ul class="lessons no-padding no-margin">
+            <%= render partial: "lessons/lesson", collection: @topic.lessons,
+              locals: {topic_manageable: {}, topic: @topic, user: @user} %>
+          </ul>
+
+          <%= will_paginate(@topic.lessons.paginate page: params[:page]) %>
+        <% else %>
+          <h3 class="center"><%= t ".no_lessons_in_topic" %></h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

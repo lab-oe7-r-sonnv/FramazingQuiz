@@ -1,6 +1,28 @@
-<%= link_to lesson, class: "no-text-decor" do %>
-  <li class="well well-lg lessons-index-item hover-bottom">
-    <%= "#{pluralize lesson.lesson_words.count,
-      t("lessons.show.term_text")}" %> |
-    <%= lesson.name %></li>
-<% end %>
+<div class="flex-box align-items-baseline">
+  <% if lesson.bookmarker && (user != lesson.user) %>
+    <li class="well well-lg lessons-index-item hover-bottom col-md-12 mx-15">
+      <div>
+        <%= t "bookmarked_lessons.lesson.bookmark_from" %>
+        <%= link_to lesson.user.name, lessons_user_path(lesson.user),
+          class: "no-text-decor" %>
+      </div>
+      <%= "#{pluralize lesson.lesson_words.count,
+        t("lessons.show.term_text")}" %> |
+      <%= link_to lesson.name, lesson, class: "no-text-decor" %>
+    </li>
+
+    <%= render "topic_manageable", lesson: lesson,
+      topic_manageable: topic_manageable %>
+  <% else %>
+    <%= link_to lesson, class: "no-text-decor col-md-12" do %>
+      <li class="well well-lg lessons-index-item hover-bottom">
+        <%= "#{pluralize lesson.lesson_words.count,
+          t("lessons.show.term_text")}" %> |
+        <%= lesson.name %>
+      </li>
+    <% end %>
+
+    <%= render "topics/topic_manageable", lesson: lesson,
+      topic_manageable: topic_manageable %>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<% provide :title, t(".title") %>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <%= render "shared/user_assets", user: @user %>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><%= t ".title" %></div>
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= form_for @topic do |f| %>
+              <%= f.label :name, t(".name") %>
+              <%= f.text_field :name, autofocus: true, class: "form-control" %>
+
+              <div class="center mt-15">
+                <%= f.submit t(".create"), class: "btn btn-lg btn-primary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

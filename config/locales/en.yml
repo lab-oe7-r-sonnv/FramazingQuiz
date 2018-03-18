@@ -51,6 +51,14 @@ en:
         didnt_receive_confirm?: "Didn't recieve password confimation?"
         sign_in_with: "Sign in with"
   shared:
+    user_assets:
+      lessons: "Lessons"
+      my_lessons: "My lessons"
+      my_bookmarked_lessons: "My bookmarked lessons"
+      recent_topics: "Recent topics"
+      topics: "Topics"
+      my_topics: "My topics"
+      new_topic: "Create new topic"
     search:
       result_matched: "Result matched"
       users: "Users"
@@ -60,6 +68,7 @@ en:
       lesson_created: "Lesson created"
       lesson_updated: "Lesson has been updated"
       lesson_deleted: "Lesson deleted"
+      topic_deleted: "Topic deleted"
     danger:
       access_denied: "You don't have permission to access this content!"
       user_not_found: "User not found"
@@ -148,13 +157,31 @@ en:
       bookmark_from: "Bookmark from"
   users:
     show_lessons:
-      my_lessons: "My lessons"
-      my_bookmarked_lessons: "My bookmarked lessons"
       no_lessons: "You don't have any lessons yet!"
+      my_lessons: "My lessons"
   write_mailer:
     finish_writing:
       finish_writing: "You've finished writing!"
       youve_finish_writing: "Congratulations %{user}! You've finished writing in a greate way!"
+  topics:
+    index:
+      title: "%{user}'s topics"
+      my_topics: "My topics"
+      no_topic: "You don't have any topics yet!"
+    new:
+      title: "New topic"
+      name: "Name"
+      create: "Create"
+    show:
+      no_lessons_in_topic: "There is no lessons in this topic!"
+      add: "Add"
+      delete: "Delete"
+      edit: "Edit"
+      sure: "Are you sure?"
+    create:
+      topic_created: "Topic created"
+    topic:
+      lessons_count: "lesson"
   layouts:
     footer:
       en: "English"

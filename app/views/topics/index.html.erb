@@ -9,18 +9,17 @@
 
   <div class="col-md-9">
     <div class="panel panel-primary">
-      <div class="panel-heading"><%= t "users.show_lessons.my_lessons" %></div>
+      <div class="panel-heading"><%= t ".my_topics" %></div>
 
       <div class="panel-body">
-        <% if @bookmarked_lessons.any? %>
+        <% if @topics.any? %>
           <ul class="lessons no-padding no-margin">
-            <%= render partial: "bookmarked_lessons/lesson",
-              collection: @bookmarked_lessons, locals: {topic_manageable: {}} %>
+            <%= render topics %>
           </ul>
 
-          <%= will_paginate @bookmarked_lessons %>
+          <%= will_paginate topics %>
         <% else %>
-          <h3 class="center"><%= t ".no_bookmarked_lessons" %></h3>
+          <h3 class="center"><%= t ".no_topic" %></h3>
         <% end %>
       </div>
     </div>

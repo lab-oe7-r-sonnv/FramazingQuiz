@@ -44,5 +44,5 @@ UseMultipartAlternativeAsContentTypeOfEmailCheck: { }
 UseObserverCheck: { }
 UseQueryAttributeCheck: { }
 UseSayWithTimeInMigrationsCheck: { }
-UseScopeAccessCheck: { }
+UseScopeAccessCheck: { ignored_files: "topics_controller.rb" }
 UseTurboSprocketsRails3Check: { }

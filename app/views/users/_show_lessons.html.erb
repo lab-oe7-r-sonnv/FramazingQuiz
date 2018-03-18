@@ -2,22 +2,7 @@
 <div class="row">
   <div class="col-md-3">
     <div class="panel panel-primary">
-      <div class="panel-heading"><%= title %></div>
-
-      <div class="panel-body">
-        <ul class="lessons no-padding no-margin">
-          <%= link_to lessons_user_path(user), class: "no-text-decor" do %>
-            <li class="well well-sm lessons-index-item hover-bottom">
-              <%= t(".my_lessons") %></li>
-          <% end %>
-
-          <%= link_to bookmarked_lessons_user_path(user),
-            class: "no-text-decor" do %>
-            <li class="well well-sm lessons-index-item hover-bottom">
-              <%= t(".my_bookmarked_lessons") %></li>
-          <% end %>
-        </ul>
-      </div>
+      <%= render "shared/user_assets", user: user %>
     </div>
   </div>
 
@@ -28,7 +13,8 @@
       <div class="panel-body">
         <% if lessons.any? %>
           <ul class="lessons no-padding no-margin">
-            <%= render partial: "lessons/lesson", collection: lessons %>
+            <%= render partial: "lessons/lesson", collection: lessons,
+              locals: {topic_manageable: {}, user: user} %>
           </ul>
           <%= will_paginate lessons %>
         <% else %>

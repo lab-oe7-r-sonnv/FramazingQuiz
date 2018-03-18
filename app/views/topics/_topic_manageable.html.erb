@@ -1,0 +1,13 @@
+<% if topic_manageable[:add] %>
+  <%= form_for :topic, url: topic_path, method: :patch do |f| %>
+    <%= f.hidden_field :lesson_id, value: lesson.id %>
+    <%= f.submit t("topics.show.add"), class: "btn btn-lg btn-primary" %>
+  <% end %>
+<% end %>
+
+<% if topic_manageable[:delete] %>
+  <%= form_for :topic, url: topic_path, method: :delete do |f| %>
+    <%= f.hidden_field :lesson_id, value: lesson.id %>
+    <%= f.submit t("topics.show.delete"), class: "btn btn-lg btn-danger" %>
+  <% end %>
+<% end %>

@@ -11,7 +11,7 @@ class BookmarkedLessonsController < ApplicationController
   end
 
   def create
-    lesson.update bookmarker_id: current_user.id
+    lesson.update_attributes bookmarker_id: current_user.id
     @notification = Notification.new notification_params
 
     return unless notification.save
@@ -20,7 +20,7 @@ class BookmarkedLessonsController < ApplicationController
   end
 
   def destroy
-    lesson.update bookmarker_id: nil
+    lesson.update_attributes bookmarker_id: nil
     redirect_with_flash :success, t(".unbookmarked"), request.referer
   end
 

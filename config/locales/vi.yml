@@ -52,6 +52,14 @@ vi:
         didnt_receive_confirm?: "Không nhận được email đặt lại mật khẩu?"
         sign_in_with: "Đăng nhập bằng"
   shared:
+    user_assets:
+      lessons: "Học phần"
+      my_lessons: "Các học phần của tôi"
+      my_bookmarked_lessons: "Các học phần đã đánh dấu"
+      recent_topics: "Các chủ đề gần đây"
+      topics: "Chủ đề"
+      my_topics: "Các chủ đề của tôi"
+      new_topic: "Tạo chủ đề mới"
     search:
       result_matched: "Kết quả tìm kiếm"
       users: "Người dùng"
@@ -61,6 +69,7 @@ vi:
       lesson_created: "Bài học đã được tạo"
       lesson_updated: "Bài học đã được cập nhật"
       lesson_deleted: "Đã xóa bài học"
+      topic_deleted: "Đã xóa chủ đề"
     danger:
       access_denied: "Bạn không có quyền truy cập nội dung này!"
       user_not_found: "Không tìm thấy người dùng"
@@ -149,12 +158,30 @@ vi:
       bookmark_from: "Đánh dấu từ"
   users:
     show_lessons:
-      my_lessons: "Học phần của tôi"
-      my_bookmarked_lessons: "Các học phần đã đánh dấu"
+      my_lessons: "Các học phần của tôi"
       no_lessons: "Bạn chưa có học phần nào!"
   write_mailer:
     finish_writing: "Hoàn thành bài viết"
     youve_finish_writing: "Chúc mừng %{user}! Bạn đã hoàn thành bài học một cách xuất sắc!"
+  topics:
+    index:
+      title: "Các chủ đề của %{user}"
+      my_topics: "Các chủ đề của tôi"
+      no_topic: "Bạn chưa có chủ đề nào!"
+    new:
+      title: "Chủ đề mới"
+      name: "Tên"
+      create: "Tạo"
+    show:
+      no_lessons_in_topic: "Chưa có học phần nào trong chủ đề này!"
+      add: "Thêm"
+      delete: "Xóa"
+      edit: "Sửa"
+      sure: "Bạn chắc chứ?"
+    create:
+      topic_created: "Đã tạo chủ đề"
+    topic:
+      lessons_count: "học phần"
   layouts:
     footer:
       en: "Tiếng Anh"

@@ -1,0 +1,43 @@
+<div class="panel-heading"><%= t ".lessons" %></div>
+
+<div class="panel-body">
+  <ul class="lessons no-padding no-margin">
+    <%= link_to lessons_user_path(user), class: "no-text-decor" do %>
+      <li class="well well-sm lessons-index-item hover-bottom">
+        <%= t ".my_lessons" %></li>
+    <% end %>
+
+    <%= link_to bookmarked_lessons_user_path(user), class: "no-text-decor" do %>
+      <li class="well well-sm lessons-index-item hover-bottom">
+        <%= t ".my_bookmarked_lessons" %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="panel-heading"><%= t ".recent_topics" %></div>
+
+<div class="panel-body">
+  <ul class="lessons no-padding no-margin">
+    <%= recent_topics user.topics, Settings.recent_topics %>
+  </ul>
+</div>
+
+<div class="panel-heading"><%= t ".topics" %></div>
+
+<div class="panel-body">
+  <ul class="lessons no-padding no-margin">
+    <%= link_to topics_path(user), class: "no-text-decor" do %>
+      <li class="well well-sm lessons-index-item hover-bottom">
+        <%= t ".my_topics" %>
+      </li>
+    <% end %>
+
+    <% if can?(:manage, Topic) && (current_user == user) %>
+      <%= link_to new_topic_path, class: "no-text-decor" do %>
+        <li class="well well-sm lessons-index-item hover-bottom">
+          <%= t ".new_topic" %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

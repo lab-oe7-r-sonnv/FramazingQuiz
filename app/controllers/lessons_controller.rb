@@ -43,7 +43,7 @@ class LessonsController < ApplicationController
   def edit; end
 
   def update
-    if lesson.update lesson_params
+    if lesson.update_attributes lesson_params
       redirect_with_flash :success, t("message.success.lesson_updated"), lesson
     else
       render :edit

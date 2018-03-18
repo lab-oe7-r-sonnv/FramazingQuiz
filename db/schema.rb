@@ -51,12 +51,14 @@ ActiveRecord::Schema.define(version: 20180315063512) do
   create_table "lessons", force: :cascade do |t|
     t.string "name"
     t.string "picture"
+    t.bigint "topic_id"
     t.boolean "blocked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "bookmarker_id"
     t.index ["bookmarker_id"], name: "index_lessons_on_bookmarker_id"
+    t.index ["topic_id"], name: "index_lessons_on_topic_id"
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
@@ -77,6 +79,16 @@ ActiveRecord::Schema.define(version: 20180315063512) do
     t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
+    t.boolean "blocked"
+    t.string "picture"
+    t.bigint "creator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_topics_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,9 +121,11 @@ ActiveRecord::Schema.define(version: 20180315063512) do
 
   add_foreign_key "courses", "users", column: "teacher_id"
   add_foreign_key "definitions", "words"
+  add_foreign_key "lessons", "topics"
   add_foreign_key "lessons", "users"
   add_foreign_key "lessons", "users", column: "bookmarker_id"
   add_foreign_key "notifications", "lessons"
   add_foreign_key "notifications", "users"
   add_foreign_key "notifications", "users", column: "notifier_id"
+  add_foreign_key "topics", "users", column: "creator_id"
 end
