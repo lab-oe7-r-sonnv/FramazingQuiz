@@ -1,0 +1,20 @@
+<div class="panel-heading"><%= t "users.show_lessons.my_lessons" %></div>
+
+<div class="panel-body">
+  <ul class="lessons no-padding no-margin">
+    <%= render partial: "lessons/lesson", collection: user.lessons - topic.lessons,
+      locals: {topic_manageable: {add: true}, topic: topic, user: user} %>
+  </ul>
+</div>
+
+<div class="panel-heading">
+  <%= t "shared.user_assets.my_bookmarked_lessons" %>
+</div>
+
+<div class="panel-body">
+  <ul class="lessons no-padding no-margin">
+    <%= render partial: "bookmarked_lessons/lesson",
+      collection: user.bookmarked_lessons - topic.lessons,
+      locals: {topic_manageable: {add: true}, topic: topic} %>
+  </ul>
+</div>

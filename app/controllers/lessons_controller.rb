@@ -1,15 +1,15 @@
 class LessonsController < ApplicationController
-  attr_reader :lesson, :searched_lessons, :search_support
+  attr_reader :lesson, :header, :search_support, :user
 
+  before_action :search_lesson, only: :index
+  before_action :find_user, only: :index
   before_action :find_lesson, only: %i(show edit update destroy)
   before_action :authenticate_user!, except: %i(index show)
   before_action :correct_user, only: %i(edit update destroy)
   before_action :authorize_lesson, except: %i(index show)
-  before_action :search_lesson, only: %i(index)
 
   def index
-    user = User.find_by id: params[:id]
-    title = t(".title", user: user.name)
+    title = t ".title", user: user.name
 
     if user
       lessons = user.lessons.paginate page: params[:page]
@@ -43,7 +43,7 @@ class LessonsController < ApplicationController
   def edit; end
 
   def update
-    if lesson.update lesson_params
+    if lesson.update_attributes lesson_params
       redirect_with_flash :success, t("message.success.lesson_updated"), lesson
     else
       render :edit
@@ -59,9 +59,10 @@ class LessonsController < ApplicationController
   private
 
   def search_lesson
-    @search_support = SearchSupports.new searched_lessons
+    return unless params[:q]
+    @search_support = SearchSupports.new header_searched_lessons
     redirect_to root_path if search_support.search_value_empty?
-    @lessons = searched_lessons.result.paginate page: params[:page]
+    @lessons = header_searched_lessons.result.paginate page: params[:page]
     render :index
   end
 
@@ -72,19 +73,16 @@ class LessonsController < ApplicationController
       definitions_attributes: [:id, :text, :correct]]]
   end
 
-  def find_lesson
-    @lesson = Lesson.find_by id: params[:id]
-
-    return if lesson
-    redirect_with_flash :danger, t("message.danger.lesson_not_found"), root_url
-  end
-
   def correct_user
-    return if current_user.current_user? lesson.user
+    return if current_user.lessons.find_by id: params[:id]
     redirect_with_flash :danger, t("message.danger.access_denied"), root_url
   end
 
   def authorize_lesson
     authorize! :manage, Lesson
+  end
+
+  def header_searched_lessons
+    header[:searched_lessons]
   end
 end

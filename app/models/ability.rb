@@ -15,6 +15,7 @@ class Ability
       can :manage, :all
     else
       can :manage, Lesson
+      can :manage, Topic
     end
     #
     # The first argument to `can` is the action you are giving the user

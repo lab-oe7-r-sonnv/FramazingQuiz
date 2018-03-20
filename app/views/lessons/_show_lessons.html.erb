@@ -4,7 +4,8 @@
     <h3><%= title %></h3>
     <% if lessons.any? %>
       <ul class="lessons">
-        <%= render partial: "lessons/lesson", collection: lessons %>
+        <%= render partial: "lessons/lesson", collection: lessons,
+          locals: {topic_manageable: {}} %>
       </ul>
       <%= will_paginate lessons %>
     <% end %>

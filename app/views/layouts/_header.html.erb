@@ -11,16 +11,19 @@
     </div>
     <div id="navbar1" class="navbar-collapse collapse">
       <div class="nav navbar-nav navbar-left">
-        <li><%= link_to t(".framazingquiz"), root_path, class: "logo navbar-b" %></li>
+        <li><%= link_to t(".framazingquiz"), root_path,
+          class: "logo navbar-b header-link" %></li>
+
         <% if user_signed_in? %>
-          <li><%= link_to t(".create_lesson"), new_lesson_path %></li>
+          <li><%= link_to t(".create_lesson"), new_lesson_path,
+            class: "header-link" %></li>
         <% end %>
       </div>
 
       <nav>
         <ul class="nav navbar-nav navbar-right flex-box align-items-center">
           <li class="navbar-form">
-            <%= search_form_for searched_users do |f| %>
+            <%= search_form_for header[:searched_users] do |f| %>
               <div class="form-group">
                 <%= f.text_field :name_cont, class: "form-control", placeholder:
                   t(".search") %>
@@ -31,32 +34,30 @@
 
           <% if user_signed_in? %>
             <li class="dropdown">
-              <%= link_to "#", class: "dropdown-toggle blue", data:
-                {toggle: "dropdown"} do %>
+              <%= link_to "#", class: "dropdown-toggle blue header-link",
+                data: {toggle: "dropdown"} do %>
                 <%= t ".account" %>
                 <b class="caret"></b>
               <% end %>
 
-              <ul class="dropdown-menu blue">
+              <ul class="dropdown-menu no-padding">
                 <% if current_user.Admin? %>
-                  <li><%= link_to t(".admin"), rails_admin.dashboard_path %></li>
+                  <li class="h-40 my-5"><%= link_to t(".admin"), rails_admin.dashboard_path,
+                    class: "header-dropdown h-40" %></li>
                 <% end %>
 
-                <li>
-                  <%= link_to t(".my_lessons"), lessons_user_path(current_user) %>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to t(".logout"), destroy_user_session_path,
-                    method: :delete, class: "logout" %>
-                </li>
+                <li class="h-40 my-5"><%= link_to t(".my_lessons"), lessons_user_path(current_user),
+                  class: "header-dropdown h-40" %></li>
+                <hr class="no-margin"/>
+                <li class="h-40 my-5"><%= link_to t(".logout"), destroy_user_session_path,
+                  method: :delete, class: "logout header-dropdown h-40" %></li>
               </ul>
             </li>
           <% else %>
             <li><%= link_to t(".login"), new_user_session_path,
-              class: "login" %></li>
+              class: "login header-link" %></li>
             <li><%= link_to t(".signup"), new_user_registration_path,
-              class: "signup" %></li>
+              class: "signup header-link" %></li>
           <% end %>
         </ul>
       </nav>

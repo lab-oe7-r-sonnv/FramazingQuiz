@@ -526,3 +526,7 @@ Rails/ScopeArgs:
 Rails/Validation:
   Include:
     - app/models/**/*.rb
+
+Rails/ActiveRecordAliases:
+  Exclude:
+    - app/controllers/**/*.rb

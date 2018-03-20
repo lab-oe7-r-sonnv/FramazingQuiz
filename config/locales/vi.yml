@@ -52,6 +52,14 @@ vi:
         didnt_receive_confirm?: "Không nhận được email đặt lại mật khẩu?"
         sign_in_with: "Đăng nhập bằng"
   shared:
+    user_assets:
+      lessons: "Học phần"
+      my_lessons: "Các học phần của tôi"
+      my_bookmarked_lessons: "Các học phần đã đánh dấu"
+      recent_topics: "Các chủ đề gần đây"
+      topics: "Chủ đề"
+      my_topics: "Các chủ đề của tôi"
+      new_topic: "Tạo chủ đề mới"
     search:
       result_matched: "Kết quả tìm kiếm"
       users: "Người dùng"
@@ -61,6 +69,7 @@ vi:
       lesson_created: "Bài học đã được tạo"
       lesson_updated: "Bài học đã được cập nhật"
       lesson_deleted: "Đã xóa bài học"
+      topic_deleted: "Đã xóa chủ đề"
     danger:
       access_denied: "Bạn không có quyền truy cập nội dung này!"
       user_not_found: "Không tìm thấy người dùng"
@@ -91,13 +100,16 @@ vi:
       def: "Định nghĩa"
       delete: "Xóa"
       confirm: "Bạn có chắc chắn không?"
+      bookmark_event: "ghi nhớ"
+      bookmark_this: "Ghi nhớ bài học này"
+      unbookmark_this: "Bỏ ghi nhớ bài học này"
     form:
       lab_name: "Tên bài học"
       word: "Từ"
       def: "Định nghĩa"
       add_term: "Thêm"
   learning:
-    finish_msg: "Làm tốt lắm! Bạn đã học xong tất cả các thuật ngữ!"
+    finish_msg: "Làm tốt lắm! Bạn đã học xong tất cả các thuật ngữ! Hãy chia sẻ với bạn bè của bạn! Kiểm tra email ngay!"
   flashcards:
     new:
       title: "Thẻ ghi nhớ"
@@ -109,6 +121,8 @@ vi:
       title: "Viết"
     show:
       start_again: "Bắt đầu lại"
+    update:
+      event: "hoàn thành bài viết"
     write:
       your_answer: "Đáp án của bạn"
       answer: "Trả lời"
@@ -122,6 +136,52 @@ vi:
       name: "Đúng"
     incorrect:
       name: "Sai"
+  notifications:
+    index:
+      notifications: "Thông báo"
+    notification:
+      bookmarked_noti: "<b>%{name}</b> đã %{event} %{asset} của bạn lúc <i>%{time}</i>"
+      finished_writing_noti: "Bạn đã %{event} %{asset} của <b>%{third_person}</b> lúc <i>%{time}</i>"
+    notification_feed:
+      see_more: "Xem thêm"
+      mark_as_read: "đã đọc"
+      mark_as_read_all: "đánh dấu tất cả đã đọc"
+  bookmarked_lessons:
+    index:
+      title: "Các học phần đã đánh dấu của %{user}"
+      no_bookmarked_lessons: "Bạn chưa ghi nhớ bài học nào!"
+    create:
+      bookmarked: "Đã thêm vào danh sách nhớ học phần"
+    destroy:
+      unbookmarked: "Đã bỏ ghi nhớ bài học này"
+    lesson:
+      bookmark_from: "Đánh dấu từ"
+  users:
+    show_lessons:
+      my_lessons: "Các học phần của tôi"
+      no_lessons: "Bạn chưa có học phần nào!"
+  write_mailer:
+    finish_writing: "Hoàn thành bài viết"
+    youve_finish_writing: "Chúc mừng %{user}! Bạn đã hoàn thành bài học một cách xuất sắc!"
+  topics:
+    index:
+      title: "Các chủ đề của %{user}"
+      my_topics: "Các chủ đề của tôi"
+      no_topic: "Bạn chưa có chủ đề nào!"
+    new:
+      title: "Chủ đề mới"
+      name: "Tên"
+      create: "Tạo"
+    show:
+      no_lessons_in_topic: "Chưa có học phần nào trong chủ đề này!"
+      add: "Thêm"
+      delete: "Xóa"
+      edit: "Sửa"
+      sure: "Bạn chắc chứ?"
+    create:
+      topic_created: "Đã tạo chủ đề"
+    topic:
+      lessons_count: "học phần"
   layouts:
     footer:
       en: "Tiếng Anh"

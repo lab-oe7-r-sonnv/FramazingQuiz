@@ -5,14 +5,14 @@
   </div>
 
   <div class="fields">
-    <div class="col-md-5 px-20 lessons-edit-header mb-20"><%= t ".word" %></div>
-    <div class="col-md-5 px-20 lessons-edit-header mb-20"><%= t ".def" %></div>
+    <div class="col-md-5 py-20 lessons-edit-header mb-20"><%= t ".word" %></div>
+    <div class="col-md-5 py-20 lessons-edit-header mb-20"><%= t ".def" %></div>
     <%= l.fields_for :lesson_words do |lw| %>
       <%= render "lesson_word", f: lw, view_only: false %>
     <% end %>
   </div>
 
-  <div class="col-md-12 center px-20">
+  <div class="col-md-12 center py-20">
     <%= link_to_add_term l, l.object.lesson_words.build %>
 
     <%= l.submit yield(:button_text), class: "btn btn-primary" %>

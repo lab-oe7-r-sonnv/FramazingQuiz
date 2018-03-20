@@ -1,11 +1,11 @@
 <% if view_only %>
-  <div class="col-md-6 bg-white mt-5 mb-5 px-10">
+  <div class="col-md-6 bg-white mt-5 mb-5 py-10">
     <div class="border-right word">
       <%= f.object.text %>
     </div>
   </div>
 
-  <div class="col-md-6 bg-white mt-5 mb-5 px-10">
+  <div class="col-md-6 bg-white mt-5 mb-5 py-10">
     <div class="word">
       <%= f.fields_for :definitions do |d|%>
         <%= d.object.text %>
@@ -13,13 +13,13 @@
     </div>
   </div>
 <% else %>
-  <div class="col-md-5 bg-white mt-5 mb-5 px-10">
+  <div class="col-md-5 bg-white mt-5 mb-5 py-10">
     <div class="border-right word">
         <%= f.text_field :text, class: "no-border border-bottom" %>
     </div>
   </div>
 
-  <div class="col-md-5 bg-white mt-5 mb-5 px-10">
+  <div class="col-md-5 bg-white mt-5 mb-5 py-10">
     <div class="word">
       <%= f.fields_for :definitions do |d|%>
         <%= d.text_field :text, class: "no-border border-bottom" %>

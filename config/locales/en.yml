@@ -51,6 +51,14 @@ en:
         didnt_receive_confirm?: "Didn't recieve password confimation?"
         sign_in_with: "Sign in with"
   shared:
+    user_assets:
+      lessons: "Lessons"
+      my_lessons: "My lessons"
+      my_bookmarked_lessons: "My bookmarked lessons"
+      recent_topics: "Recent topics"
+      topics: "Topics"
+      my_topics: "My topics"
+      new_topic: "Create new topic"
     search:
       result_matched: "Result matched"
       users: "Users"
@@ -60,6 +68,7 @@ en:
       lesson_created: "Lesson created"
       lesson_updated: "Lesson has been updated"
       lesson_deleted: "Lesson deleted"
+      topic_deleted: "Topic deleted"
     danger:
       access_denied: "You don't have permission to access this content!"
       user_not_found: "User not found"
@@ -90,13 +99,16 @@ en:
       def: "Definition"
       delete: "Delete"
       confirm: "You sure?"
+      bookmark_event: "bookmarked"
+      bookmark_this: "Bookmark this lesson"
+      unbookmark_this: "Unbookmark this lesson"
     form:
       lab_name: "Title"
       word: "Word"
       def: "Definition"
       add_term: "Add"
   learning:
-    finish_msg: "Well done! You've learnt all words!"
+    finish_msg: "Well done! You've learnt all words! Let's share to your friends! Check your email!"
   flashcards:
     new:
       title: "Flashcard"
@@ -108,6 +120,8 @@ en:
       title: "Write"
     show:
       start_again: "Start again"
+    update:
+      event: "finished_writing"
     write:
       your_answer: "Your answer"
       answer: "Answer"
@@ -121,6 +135,53 @@ en:
       name: "Correct"
     incorrect:
       name: "Incorrect"
+  notifications:
+    index:
+      notifications: "Notifications"
+    notification:
+      bookmarked_noti: "<b>%{name}</b> has %{event} your %{asset} at <i>%{time}</i>"
+      finished_writing_noti: "You've %{event} <b>%{third_person}'s</b> %{asset} at <i>%{time}</i>"
+    notification_feed:
+      see_more: "See more"
+      mark_as_read: "mark as read"
+      mark_as_read_all: "mark as read all"
+  bookmarked_lessons:
+    index:
+      title: "%{user}'s bookmarked lessons"
+      no_bookmarked_lessons: "You don't have any bookmarked lessons yet!"
+    create:
+      bookmarked: "Added to your bookmark lessons list"
+    destroy:
+      unbookmarked: "Unbookmarked this lesson"
+    lesson:
+      bookmark_from: "Bookmark from"
+  users:
+    show_lessons:
+      no_lessons: "You don't have any lessons yet!"
+      my_lessons: "My lessons"
+  write_mailer:
+    finish_writing:
+      finish_writing: "You've finished writing!"
+      youve_finish_writing: "Congratulations %{user}! You've finished writing %{lesson} in a greate way!"
+  topics:
+    index:
+      title: "%{user}'s topics"
+      my_topics: "My topics"
+      no_topic: "You don't have any topics yet!"
+    new:
+      title: "New topic"
+      name: "Name"
+      create: "Create"
+    show:
+      no_lessons_in_topic: "There is no lessons in this topic!"
+      add: "Add"
+      delete: "Delete"
+      edit: "Edit"
+      sure: "Are you sure?"
+    create:
+      topic_created: "Topic created"
+    topic:
+      lessons_count: "lesson"
   layouts:
     footer:
       en: "English"

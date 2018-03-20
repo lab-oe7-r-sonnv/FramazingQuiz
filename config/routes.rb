@@ -5,10 +5,13 @@ Rails.application.routes.draw do
     resources :users do
       member do
         get :lessons, to: "lessons#index"
+        get :bookmarked_lessons, to: "bookmarked_lessons#index"
+        resources :topics, param: :topic_id
       end
     end
     resources :lessons, except: :index do
       member do
+        resource :bookmarked_lessons, only: %i(create destroy)
         resource :flashcards, only: :new
         resource :writes, only: %i(new update)
       end

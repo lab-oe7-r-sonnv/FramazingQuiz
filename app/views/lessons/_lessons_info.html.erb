@@ -3,9 +3,11 @@
     <div class="col-md-9">
       <li class="well well-lg lessons-index-item hover-bottom">
         <div>
-          <%= lesson.words.count %> <%= t(".words") %> | <%= lesson.user.name %>
+          <%= lesson.words.count %> <%= t(".words") %> |
+          <%= link_to lesson.user.name, lessons_user_path(lesson.user),
+            class: "no-text-decor" %>
         </div>
-        <%= link_to lesson.name, lesson, class: "no-text-decor" %>
+        <h3><%= link_to lesson.name, lesson, class: "no-text-decor" %></h3>
       </li>
     </div>
   </div>

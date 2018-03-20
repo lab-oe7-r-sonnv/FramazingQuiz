@@ -1,0 +1,31 @@
+<% provide :title, @topic.name %>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="panel panel-primary">
+      <%= render "shared/user_assets", user: @user %>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><%= @topic.name %></div>
+
+      <div class="panel-body">
+        <% if @topic.lessons.any? %>
+          <ul class="lessons no-padding no-margin">
+            <%= render partial: "lessons/lesson", collection: @topic.lessons,
+              locals: {topic_manageable: {delete: true},
+              topic: @topic, user: @user} %>
+          </ul>
+
+          <%= will_paginate(@topic.lessons.paginate page: params[:page]) %>
+        <% else %>
+          <h3 class="center"><%= t "topics.show.no_lessons_in_topic" %></h3>
+        <% end %>
+      </div>
+
+      <%= render "topics/add_lessons", user: @user, topic: @topic %>
+    </div>
+  </div>
+</div>

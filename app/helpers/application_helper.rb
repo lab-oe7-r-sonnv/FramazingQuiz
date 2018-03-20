@@ -16,4 +16,9 @@ module ApplicationHelper
     link_to t(".add_term"), "#", class: "add_fields btn btn-default",
       data: {id: id, fields: fields.delete("\n")}
   end
+
+  def recent_topics topics, amount
+    recent_topics = topics.recent.take amount
+    render partial: "topics/simple_topic", collection: recent_topics, as: :topic
+  end
 end

@@ -1,8 +1,9 @@
 <% provide :title, title %>
+
 <div class="row">
   <div class="col-md-3">
     <div class="panel panel-primary">
-      <%= render "shared/user_assets", user: user %>
+      <%= render "shared/user_assets", user: @user %>
     </div>
   </div>
 
@@ -11,14 +12,14 @@
       <div class="panel-heading"><%= title %></div>
 
       <div class="panel-body">
-        <% if lessons.any? %>
+        <% if @topics.any? %>
           <ul class="lessons no-padding no-margin">
-            <%= render partial: "lessons/lesson", collection: lessons,
-              locals: {topic_manageable: {}, user: user} %>
+            <%= render topics %>
           </ul>
-          <%= will_paginate lessons %>
+
+          <%= will_paginate topics %>
         <% else %>
-          <h3 class="center"><%= t ".no_lessons" %></h3>
+          <h3 class="center"><%= t ".no_topic" %></h3>
         <% end %>
       </div>
     </div>

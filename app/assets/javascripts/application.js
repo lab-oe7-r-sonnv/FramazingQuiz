@@ -30,4 +30,46 @@ $(document).on('turbolinks:load', function () {
     $('.fields').append($(this).data('fields').replace(regexp, time));
     return event.preventDefault();
   });
+
+  // mark read a noti when click on "mark as read" link
+  $('#noti_list').on('click', '.read-marker', function (event) {
+    $(this).closest('li').removeClass('unread-noti');
+    $('#noti_dropdown').toggleClass('inactive-bell').toggleClass('active-bell');
+    recountNoti();
+    return event.preventDefault();
+  });
+
+  // mark read all noti when click on "mark as read all" link
+  $('#read_marker_all').on('click', function (event) {
+    $('.unread-noti').removeClass('unread-noti');
+    $('#noti_dropdown').toggleClass('inactive-bell').toggleClass('active-bell');
+    recountNoti();
+    return event.preventDefault();
+  });
+
+  // toggle when click on notification bell
+  $('#noti_dropdown').on('click', function () {
+    $(this).toggleClass('inactive-bell').toggleClass('active-bell');
+  });
 });
+
+// global functions
+
+// recount notification
+function recountNoti() {
+  var unread_noti = $('.unread-noti').length;
+  unread_noti = (unread_noti == 0) ? '' : unread_noti;
+  $('#noti_counter').html('<span class="badge bgc-red">' +
+    unread_noti + '</span>');
+}
+
+// render new notification
+function renderNoti (newNoti) {
+  // prepend new noti to top of the notifications list
+  $('#noti_list').prepend(newNoti);
+
+  // remove last notification and recount noti
+  $('#noti_list > div:last').remove();
+  $('#noti_list > hr:last').remove();
+  recountNoti();
+}

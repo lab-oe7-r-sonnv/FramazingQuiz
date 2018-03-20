@@ -3,16 +3,34 @@
 <div class="row">
   <div class="col-md-8">
     <div class="lessons-header">
+      <% if can? :manage, Lesson %>
+        <% if @lesson.bookmarker == current_user %>
+          <%= form_for :bookmarked_lessons, url: bookmarked_lessons_path,
+            method: :delete do |f| %>
+            <%= f.submit t(".unbookmark_this"), class: "btn btn-danger" %>
+          <% end %>
+        <% else %>
+          <%= form_for :bookmarked_lessons, url: bookmarked_lessons_path,
+            method: :post do |f| %>
+            <%= f.submit t(".bookmark_this"), class: "btn btn-default" %>
+          <% end %>
+        <% end %>
+      <% end %>
+
       <%= "#{pluralize @lesson.lesson_words.count, t(".term_text")}" %> |
-      <strong><%= "#{t(".creator")}: #{@lesson.user.name}" %></strong>
+      <strong>
+        <%= "#{t(".creator")}: " %>
+        <%= link_to @lesson.user.name, lessons_user_path(@lesson.user),
+          class: "no-text-decor" %>
+      </strong>
       <h1 class="lessons-title"><%= t ".title", title: @lesson.name %></h1>
 
-      <% if can?(:update, Lesson) && current_user.current_user?(@lesson.user) %>
+      <% if can?(:update, Lesson) && (current_user == @lesson.user) %>
         <div class="manage_options">
           <%= link_to t(".edit"), edit_lesson_path(@lesson),
             class: "btn btn-default" %>
           <%= link_to t(".delete"), @lesson, method: :delete, data: {confirm:
-            t(".confirm")}, class: "btn btn-default" %>
+            t(".confirm")}, class: "btn btn-danger" %>
         </div><br>
       <% end %>
 
@@ -26,10 +44,10 @@
 
     <div class="lessons-words">
       <%= form_for @lesson do |l| %>
-        <div class="col-md-6 px-20 lessons-edit-header mb-20">
+        <div class="col-md-6 py-20 lessons-edit-header mb-20">
           <%= t ".word" %>
         </div>
-        <div class="col-md-6 px-20 lessons-edit-header mb-20">
+        <div class="col-md-6 py-20 lessons-edit-header mb-20">
           <%= t ".def" %>
         </div><hr />
 
